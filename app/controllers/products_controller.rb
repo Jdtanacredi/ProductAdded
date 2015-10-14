@@ -9,10 +9,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     @chargeJSON = JWT.encode({
-  iat: Time.now.to_i,
-  amount: 40000,
-  currency: 'EUR'
-}, ENV['QUAD_SECRET'])
-
+      iat: Time.now.to_i,
+      amount: 40000,
+      currency: 'EUR'
+    }, ENV['QUAD_SECRET'])
   end
 end

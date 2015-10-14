@@ -1,0 +1,80 @@
+<script src="https://js.stripe.com/v2/"></script>
+<script src="https://js.quaderno.io/v2/"></script>
+
+<section class="productImageSection">
+  <div class="mainImageContainer">
+    <p>
+      placeholder
+    </p>
+    <img src="" alt="" />
+  </div>
+  <div class="imageThumbnails">
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+  </div>
+</section>
+
+<section class="productCopySection">
+  <h1><%= @product.name %></h1>
+  <div class="productDetails">
+    <p>Price: $<%= @product.price %> USD</p>
+    <p>Net Wt.: 4 grams/0.14 Oz</p>
+    <p>QTY: 1 (limit one per customer)</p>
+    <p>Free Worldwide Shipping</p>
+  </div>
+
+  <form action="" method="POST">
+    <script
+      src="https://checkout.quaderno.io/checkout.js" class="quaderno-button"
+      data-type="charge"
+      data-key="pk_live_xbq8EcoXjbrpSZhhy6D"
+      data-charge="<%= @chargeJSON %>"
+      data-description="One-off Charge"
+      data-label="Pay with Card"
+      data-amount="1000"
+      data-currency="EUR">
+    </script>
+  </form>
+
+  <div class="toggleBox clearfix">
+    <div class="toggleHeader clearfix">
+      <p class="toggleTitle">contents</p>
+      <p class="plusMinus">+</p>
+    </div>
+    <div class="openClose">
+      <p>Gold 001 pigment</p>
+      <p>Second life container</p>
+      <p>Metal spatula</p>
+    </div>
+  </div>
+
+  <div class="toggleBox clearfix">
+    <div class="toggleHeader clearfix">
+      <p class="toggleTitle">application</p>
+      <p class="plusMinus">+</p>
+    </div>
+    <div class="openClose">
+      here is a ton of content
+    </div>
+  </div>
+
+  <div class="thumbnailContainer">
+    <img src="http://www.placecage.com/200/200" alt="" />
+    <img src="http://www.placecage.com/200/200" alt="" />
+    <img src="http://www.placecage.com/200/200" alt="" />
+    <img src="http://www.placecage.com/200/200" alt="" />
+    <img src="http://www.placecage.com/200/200" alt="" />
+  </div>
+
+</section>
+
+<footer>
+  <a class="list-group-item" target="_blank" href="https://instagram.com/patmcgrathreal/"><i class="fa fa-instagram"></i>&nbsp;</a>
+  <a class="list-group-item" target="_blank" href="https://www.facebook.com/PatMcGrathReal"><i class="fa fa-facebook-square"></i>&nbsp;</a>
+  <a class="list-group-item" target="_blank" href="https://twitter.com/patmcgrathreal"><i class="fa fa-twitter"></i>&nbsp;</a>
+  <div class="footerBranding">
+    &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a> <span>|</span> <a href="#">Media</a>
+  </div>
+</footer>

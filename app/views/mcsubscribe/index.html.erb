@@ -1,0 +1,55 @@
+<div class="colorBackground">
+  <div class="confirmationTerminal">
+    <!-- <p>&lt; You're Golden &gt;</p> -->
+    <p class="accessGranted">/* ACCESS GRANTED */</p>
+    <!-- <p>&lt; Countdown to Gold 001 &gt;</p> -->
+    <div class="countdownContainer">
+      <p class="stayTuned">STAY TUNED FOR GOLD 001</p>
+      <p>RELEASE NOTIFICATIONS</p>
+      <div id="countdown"></div>
+      <div class="countdownMarkers">
+        <p class="days">DAYS</p>
+        <p class="hours">HOURS</p>
+        <p class="minutes">MINUTES</p>
+        <p class="seconds">SECONDS</p>
+      </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+  </div>
+</div>
+<div class="staticBackground">
+</div>
+<div class="randomBackground">
+</div>
+
+<div class="mainContent">
+  <div class="terminalContainer">
+    <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
+    <p><!--<span>01</span>-->&lt; &nbsp;sign up for priority access&nbsp; &gt;</p>
+    <p><!--<span>02</span>--><span class="blinker">&nbsp;</span> &nbsp;<%= email_field(:email, :address, {id: "email", placeholder: "enter email here"}) %>
+      <button type="button" id="subscribe">SUBMIT</button>
+      <%#= button_tag(type: 'button', {id: "subscribe"}) %></p>
+    <!-- <p><span>03</span>&lt; &nbsp;<%= submit_tag("Send", {id: "subscribe"}) %></p> -->
+    <!-- <p id="response"><span>04</span>&lt; &nbsp;</p> -->
+    <% end %>
+  </div>
+</div>
+
+<div class="socialContainer">
+  <!-- <div class="socialIcons"> -->
+    <a class="list-group-item" target="_blank" href="https://instagram.com/patmcgrathreal/"><i class="fa fa-instagram"></i>&nbsp;</a>
+    <a class="list-group-item" target="_blank" href="https://www.facebook.com/PatMcGrathReal"><i class="fa fa-facebook-square"></i>&nbsp;</a>
+    <a class="list-group-item" target="_blank" href="https://twitter.com/patmcgrathreal"><i class="fa fa-twitter"></i>&nbsp;</a>
+    <div class="footerBranding">
+      &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a>
+    </div>
+  <!-- </div> -->
+</div>
+
+
+<script type="text/javascript">
+$('#countdown').countdown('2015/10/22', function(event) {
+  $(this).html(event.strftime('%D : %H : %M : %S'));
+});
+</script>

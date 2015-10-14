@@ -1,0 +1,73 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {background-color: #000;}
+.productImageSection {
+  float: left;
+  width: 50%;
+}
+
+.productCopySection {
+  width: 45%;
+  margin: 0 2.5%;
+  float: left;
+  // color: #fff;
+  padding-top: 70px;
+  h1 {
+    margin: 0;
+  }
+}
+
+.productDetails {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 15px 0;
+  p {
+    margin: 0;
+  }
+}
+
+// TOGGLE BOX START
+.toggleBox {
+	border-bottom: 1px solid #fff;
+  .toggleHeader{ display: inline;}
+  .toggleTitle {float: left; text-transform: uppercase;}
+}
+.plusMinus{
+	float: right;
+	// width: 23px;
+	// height: 23px;
+	// text-align: center;
+	// margin-top: 1px;
+	// letter-spacing: 0px;
+	// background: url("/skin/frontend/caudalie/mobile2014/images/collapse_minus.png");
+	// background-size: contain;
+	// background-repeat: no-repeat;
+	// color: rgba(0, 0, 0, 0.0);
+}
+.openClose {
+  display: none;
+  p {margin: 0;}
+}
+// TOGGLE BOX END
+
+.thumbnailContainer {
+  img {width: 18%;}
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  a { text-decoration: none; color: #fff;}
+  .footerBranding {display: inline-block;}
+}
+
+.quaderno-button-el {
+  background-color: #000;
+  color: #fff;
+  font-weight: normal;
+  border: 1px solid #fff;
+}

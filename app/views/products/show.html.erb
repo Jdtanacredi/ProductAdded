@@ -1,5 +1,5 @@
-<script src="https://js.stripe.com/v2/"></script>
-<script src="https://js.quaderno.io/v2/"></script>
+<!-- <script src="https://js.stripe.com/v2/"></script>
+<script src="https://js.quaderno.io/v2/"></script> -->
 
 <section class="productImageSection">
   <div class="mainImageContainer">
@@ -25,7 +25,7 @@
     <p>Free Worldwide Shipping</p>
   </div>
 
-  <form action="" method="POST">
+  <!-- <form action="" method="POST">
     <script
       src="https://checkout.quaderno.io/checkout.js" class="quaderno-button"
       data-type="charge"
@@ -36,7 +36,56 @@
       data-amount="4500"
       data-currency="USD">
     </script>
-  </form>
+  </form> -->
+
+  <button id="customButton">Pay with card</button>
+
+<script type="text/javascript">
+
+// PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
+ // key: "pk_live_xbq8EcoXjbrpSZhhy6D" // public normal key
+
+var handler = QuadernoCheckout.configure({
+  key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox
+  locale: 'en',
+  callback: function(data) {
+    console.log(data.details);
+  }
+});
+
+$('#customButton').click(function(e) {
+ handler.open({
+      type: "charge",
+      currency: 'USD',
+      charge: "<%= @chargeJSON %>",
+      description: 'Awesome charge'
+ });
+e.preventDefault();
+});
+
+</script>
+
+  <!-- ​<script>
+  var handler = QuadernoCheckout.configure({
+    key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox    // PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
+     // key: "pk_live_xbq8EcoXjbrpSZhhy6D" // public normal key
+    locale: 'en',
+    callback: function(data) {
+      console.log(data.details);
+    }
+  });
+
+$('#customButton').click(function() {
+ handler.open({
+      type: "charge",
+      currency: 'USD',
+      charge: "<%= @chargeJSON %>",
+      description: 'Awesome charge'
+ });
+e.preventDefault();
+});
+  ​</script> -->
+
 
   <div class="toggleBox clearfix">
     <div class="toggleHeader clearfix">

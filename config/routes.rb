@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   get 'products/index'
-
+  get 'charges/create'
   root :to => 'mcsubscribe#index'
   post 'mcsubscribe/subscribe', to: 'mcsubscribe#subscribe'
 
+
   resources :products, only: [:index, :show]
+  resources :charges, only: [:create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -238,9 +238,38 @@ input[type=email]:focus {
     .seconds {position: absolute; right: 14px;}
 }
 
+// INSTAGRAM SECTION
+.instaFeed {
+  position: relative;
+  z-index: 5;
+  padding: 0 4%;
+}
+
+.emptySpace {
+  width: 100vw;
+  height: 100vh;
+}
+
 .instaImage {
   float: left;
-  width: 33%;
+  width: 31%;
+  text-align: center;
+  padding: 0 1%;
+  margin-bottom: 20px;
+  img {
+    width: 100%;
+  }
+}
+
+.instaImageLarge {
+  float: left;
+  width: 47.5%;
+  text-align: center;
+  padding: 0 1%;
+  margin-bottom: 20px;
+  img {
+    width: 100%;
+  }
 }
 
 
@@ -265,6 +294,18 @@ input[type=email]:focus {
     bottom: 30px;
     width: 100%;
   }
+
+  .instaImage {
+    width: 47.5%;
+  }
+  .instaImageLarge {
+    width: 98%;
+  }
+  .noMobile {
+    display: none;
+  }
+
+
 }
 
 @media handheld, screen and (max-width: 520px) {

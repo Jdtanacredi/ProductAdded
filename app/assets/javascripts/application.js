@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= jquery.countdown.min.js
+//= jquery.countdown.min
 //= require turbolinks
+//= require jsrsasign-latest-all-min
+//= require json-sans-eval
+//= require jws-3.3
 //= require_tree .

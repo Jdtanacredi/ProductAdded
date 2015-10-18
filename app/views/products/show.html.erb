@@ -31,10 +31,11 @@
       data-currency="USD">
     </script>
   </form> -->
-<%= form_tag charges_path do %>
-  <%= hidden_field_tag :product_id, @product.id %>
-  <%= hidden_field_tag :quantity, '1' %>
-  <button id="customButton">Pay with card</button>
+<%= form_for Charge.new do |f| %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.hidden_field :quantity, value: '1' %>
+  <%= f.hidden_field :stripe_token %>
+  <button type="button" id="customButton">Pay with card</button>
 <% end %>
 
 <script type="text/javascript">
@@ -43,8 +44,10 @@
 var handler = QuadernoCheckout.configure({
   key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox
   locale: 'en',
+  billingAddress: true,
   callback: function(data) {
-    // console.log(data.details);
+    console.log(data);
+    $('#new_charge').find("#charge_stripe_token").val('foo');
   }
 });
 $('#customButton').click(function(e) {
@@ -54,8 +57,8 @@ $('#customButton').click(function(e) {
       currency: 'USD',
       charge: "<%= @chargeJSON %>",
       description: 'Awesome charge'
+      // billing-address:
  });
-e.preventDefault();
 });
 </script>
 

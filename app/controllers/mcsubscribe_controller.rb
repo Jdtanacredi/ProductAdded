@@ -3,6 +3,9 @@ class McsubscribeController < ApplicationController
 	def index
   end
 
+	def launch
+	end
+
   def subscribe
     email = params[:email][:address]
     if !email.blank?

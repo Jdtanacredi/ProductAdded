@@ -3,7 +3,11 @@
 
 <section class="productImageSection">
   <div class="mainImageContainer">
-    <%= image_tag "product/productImage1.jpg", class: "imageSlide" %>
+    <%= image_tag "product/productImage1.jpg", class: "imageSlide productImage1" %>
+    <%= image_tag "product/productImage2.jpg", class: "imageSlide productImage2" %>
+    <%= image_tag "product/productImage3.jpg", class: "imageSlide productImage3" %>
+    <%= image_tag "product/productImage4.jpg", class: "imageSlide productImage4" %>
+    <%= image_tag "product/productImage5.jpg", class: "imageSlide productImage5" %>
   </div>
 </section>
 
@@ -57,6 +61,23 @@ $('#customButton').click(function(e) {
       // billing-address:
  });
 });
+
+// $(document).ready(function(){
+//   var changeImage;
+//
+//   changeImage = function() {
+//     var className;
+//     className = $(this).attr('class').split(' ')[1];
+//     className = className + '.jpg';
+//     console.log('/assets/product/' + className);
+//     $('.imageSlide').attr("src", <%= image_path 'className' %>);
+//   };
+//
+//   $('.productThumb').click changeImage
+//
+// });
+
+
 </script>
 
   <div class="toggleBox clearfix">

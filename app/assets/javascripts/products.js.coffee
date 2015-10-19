@@ -4,8 +4,10 @@
 $(document).ready ->
   changeImage = ->
     className = $(this).attr('class').split(' ')[1]
-    console.log '/assets/product/' + className
-    $('.imageSlide').attr("src",'/assets/product/' + className + '.jpg')
+    className = $('.' + className);
+    $('.mainImageContainer').children().css 'display', 'none'
+    $('.mainImageContainer').find(className).css 'display','block';
+    # newImage.css 'display', 'block'
     return
 
   $('.productThumb').click changeImage

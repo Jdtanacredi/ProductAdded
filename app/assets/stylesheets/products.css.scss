@@ -9,6 +9,10 @@ body {background-color: #000;}
 .mainImageContainer {
   img {width: 100%;}
 }
+.imageSlide.productImage2,
+.imageSlide.productImage3,
+.imageSlide.productImage4,
+.imageSlide.productImage5 {display: none;}
 
 .productCopySection {
   width: 45%;

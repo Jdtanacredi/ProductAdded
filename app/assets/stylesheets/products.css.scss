@@ -33,20 +33,12 @@ body {background-color: #000;}
 // TOGGLE BOX START
 .toggleBox {
 	border-bottom: 1px solid #fff;
-  .toggleHeader{ display: inline;}
+  .toggleHeader{ display: inline; cursor: pointer;}
   .toggleTitle {float: left; text-transform: uppercase;}
 }
 .plusMinus{
 	float: right;
-	// width: 23px;
-	// height: 23px;
-	// text-align: center;
-	// margin-top: 1px;
-	// letter-spacing: 0px;
-	// background: url("/skin/frontend/caudalie/mobile2014/images/collapse_minus.png");
-	// background-size: contain;
-	// background-repeat: no-repeat;
-	// color: rgba(0, 0, 0, 0.0);
+  padding-right: 5%;
 }
 .openClose {
   display: none;
@@ -55,7 +47,13 @@ body {background-color: #000;}
 // TOGGLE BOX END
 
 .thumbnailContainer {
-  img {width: 18%;}
+  padding: 20px 0;
+  border-bottom: 1px solid #fff;
+  .productThumb {
+    width: 18%;
+    float: left;
+    margin: 0 1%;
+  }
 }
 
 footer {
@@ -64,6 +62,7 @@ footer {
   width: 100%;
   text-align: center;
   padding: 15px 0;
+  background: #000;
   a { text-decoration: none; color: #fff;}
   .footerBranding {display: inline-block;}
 }

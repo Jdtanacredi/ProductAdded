@@ -20,11 +20,5 @@ $(document).ready ->
       jQuery(this).children('.plusMinus').text '-'
       jQuery(this).siblings('.openClose').css 'display', 'block'
     return
-
+    
 return
-
-
-#
-# $('.productThumb').click ->
-#   console.log 'meow'
-#   return

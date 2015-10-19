@@ -39,26 +39,27 @@
 <script type="text/javascript">
 // PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
  // key: "pk_live_xbq8EcoXjbrpSZhhy6D" // public normal key
-var handler = QuadernoCheckout.configure({
-  key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox
-  locale: 'en',
-  billingAddress: true,
-  callback: function(data) {
-    console.log(data);
-    $('#new_charge').find("#charge_stripe_token").val('foo');
-  }
-});
-$('#customButton').click(function(e) {
- handler.open({
-      type: "charge",
-      amount: "<%= @product.price %>",
-      currency: 'USD',
-      charge: "<%= @chargeJSON %>",
-      description: 'Awesome charge'
-      // billing-address:
- });
-});
 
+ // EXAMPLE 1 with popup form built in.
+// var handler = QuadernoCheckout.configure({
+//   key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox
+//   locale: 'en',
+//   billingAddress: true,
+//   callback: function(data) {
+//     console.log(data);
+//     $('#new_charge').find("#charge_stripe_token").val('foo');
+//   }
+// });
+// $('#customButton').click(function(e) {
+//  handler.open({
+//       type: "charge",
+//       amount: "<%= @product.price %>",
+//       currency: 'USD',
+//       charge: "<%= @chargeJSON %>",
+//       description: 'Awesome charge'
+//       // billing-address:
+//  });
+// });
 
 </script>
 
@@ -97,10 +98,10 @@ $('#customButton').click(function(e) {
 		<div class="modal__dialog">
 			<div class="modal__content">
         <form action="" method="POST" id="payment-form"
-      data-gatewat="stripe"
-      data-key="YOUR_PUBLISHABLE_KEY"
-      data-charge="JSON_WEB_TOKEN"
-      data-amount="1000"
+      data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
+      data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
+      data-charge="<%= @chargeJSON %>"
+      data-amount="4000"
       data-taxes="excluded">
 
       <span class="payment-errors"></span>
@@ -229,6 +230,62 @@ $('#customButton').click(function(e) {
 			</div>
 		</div>
 	</div>
+
+<script type="text/javascript">
+  // EXAMPLE 2 with custom form.
+  var stripeResponseHandler = function(status, response) {
+          var $form = $('#payment-form');
+          debugger;
+          if (response.error) {
+            debugger;
+            // Show the errors on the form
+            $form.find('.payment-errors').text(response.error.message);
+            $form.find('button').prop('disabled', false);
+          } else {
+            // token contains id, last4, and card type
+            var token = response.id;
+            // Insert the token into the form so it gets submitted to the server
+            $form.append($('<input type="hidden" data-quaderno="cardToken" />').val(token));
+            // create the charge in Stripe via Quaderno and submit
+            Quaderno.createCharge({
+              success: function(status, response){
+                // response contains the message and the Stripe customer id
+                $form.append($('<input type="hidden" name="transactionDetails" data-quaderno="transactionDetails" />').val(response.details));
+                // and re-submit the form
+                $form.get(0).submit();
+              },
+              error: function(status, response){
+                $form.find('.payment-errors').text(response.message);
+                $form.find('button').prop('disabled', false);
+              }
+            });
+          }
+        };
+        jQuery(function($) {
+          $('#payment-form').click(function(e) {
+            var $form = $(this);
+            // This identifies your website in the createToken call below
+            debugger;
+            Stripe.setPublishableKey($(this).data('gateway-key'));
+            // Disable the submit button to prevent repeated clicks
+            $form.find('button').prop('disabled', true);
+            // Get the card token from Stripe
+            Stripe.card.createToken({
+              number: $('.card-number').val(),
+              cvc: $('.card-cvc').val(),
+              exp_month: $('.card-expiry-month').val(),
+              exp_year: $('.card-expiry-year').val()
+            }, stripeResponseHandler);
+            // Prevent the form from submitting with the default action
+            return false;
+          });
+        });
+
+  </script>
+
+
+
+
 
 <script type="text/javascript">
 var Modal = (function() {
@@ -423,6 +480,11 @@ return {
 
 Modal.init();
 </script>
+
+<script type="text/javascript">
+  // QUADERNO/STRIPE START
+</script>
+
 
 <footer>
   <a class="list-group-item" target="_blank" href="https://instagram.com/patmcgrathreal/"><i class="fa fa-instagram"></i>&nbsp;</a>

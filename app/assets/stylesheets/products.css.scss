@@ -77,12 +77,22 @@ footer {
   font-weight: normal;
   border: 1px solid #fff;
 }
+.thumbnailContainer.mobileThumbContainer {display: none;}
+
+@media handheld, screen and (max-width: 700px) {
+  .productImageSection {width: 100%;}
+  .productCopySection {width: 100%;}
+  .thumbnailContainer {display: none;}
+  .thumbnailContainer.mobileThumbContainer {
+    display: block;
+  }
+}
 
 
 // MODAL STYLING
 
 /**
- * Material Modal CSS
+ * Material Modal CSS START
  */
 .modal {
   will-change: visibility, opacity;
@@ -193,7 +203,7 @@ footer {
           transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 /**
- * Demo specific CSS
+ * Demo specific CSS START
  */
 // body {
 //   height: 100vh;
@@ -293,3 +303,9 @@ footer {
       -ms-transform: rotate(180deg) scale(1.1);
           transform: rotate(180deg) scale(1.1);
 }
+
+// MODAL STYLING END
+
+/**
+ * Material Modal CSS END
+ */

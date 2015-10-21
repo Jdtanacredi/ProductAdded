@@ -299,6 +299,16 @@ input[type=email]:focus {
     width: 100%;
   }
 }
+.instaVideo {
+  float: left;
+  width: 31%;
+  text-align: center;
+  margin: 0 1% 20px;
+  position: relative;
+  video {
+    width: 100%;
+  }
+}
 
 .instaImage:hover .hoverTextContainer,
 .instaImageLarge:hover .hoverTextContainer {

@@ -284,11 +284,12 @@ input[type=email]:focus {
   text-align: center;
   margin: 0 1% 20px;
   position: relative;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-     -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-          box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+          box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
   img {
     width: 100%;
+    display: block;
   }
 }
 
@@ -298,11 +299,12 @@ input[type=email]:focus {
   text-align: center;
   margin: 0 1% 20px;
   position: relative;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-     -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-          box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+          box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
   img {
     width: 100%;
+    display: block;
   }
 }
 .instaVideo {
@@ -311,9 +313,9 @@ input[type=email]:focus {
   text-align: center;
   margin: 0 1% 20px;
   position: relative;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-     -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
-          box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+          box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
   video {
     width: 100%;
   }
@@ -325,10 +327,6 @@ input[type=email]:focus {
 .instaImageLarge:hover .hoverImage {
   opacity: 1;
 }
-// .instaImage:hover .hoverImage,
-// .instaImageLarge:hover .hoverImage {
-//   opacity: 1;
-// }
 
 
 .hoverImage {

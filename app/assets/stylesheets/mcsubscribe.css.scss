@@ -249,9 +249,9 @@ input[type=email]:focus {
     margin-top: 10vh;
   }
   h5 {
-    padding-top: 50px;
+    padding-top: 30px;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 0 auto;
     font-size: .8em;
     font-weight: 100;
   }
@@ -463,6 +463,12 @@ input[type=email]:focus {
   .instaFeed h5,
   .instaFeed .scrollDown {font-size: .5em;}
   .hoverTextContainer p {font-size: 10px;}
+  .instaFeed h1 {
+    font-size: 1.6em;
+  }
+  .instaFeed h3 {
+    font-size: .7em;
+  }
 }
 
 @media handheld, screen and (max-width: 400px) {

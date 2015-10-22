@@ -453,6 +453,9 @@ input[type=email]:focus {
     .fa {margin: 0;}
   }
   .countdownMarkers {display: none;}
+  .instaFeed h5,
+  .instaFeed .scrollDown {font-size: .5em;}
+  .hoverTextContainer p {font-size: 10px;}
 }
 
 @media handheld, screen and (max-width: 400px) {

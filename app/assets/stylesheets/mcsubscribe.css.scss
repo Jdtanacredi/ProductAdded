@@ -320,10 +320,29 @@ input[type=email]:focus {
 }
 
 .instaImage:hover .hoverTextContainer,
-.instaImageLarge:hover .hoverTextContainer {
+.instaImageLarge:hover .hoverTextContainer,
+.instaImage:hover .hoverImage,
+.instaImageLarge:hover .hoverImage {
   opacity: 1;
 }
+// .instaImage:hover .hoverImage,
+// .instaImageLarge:hover .hoverImage {
+//   opacity: 1;
+// }
 
+
+.hoverImage {
+  // background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.3s ease;
+       -o-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+}
 .hoverTextContainer {
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.3s ease;

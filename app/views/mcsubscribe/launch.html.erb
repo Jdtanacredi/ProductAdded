@@ -2,24 +2,61 @@
 </div>
 <div class="instaFeed clearfix">
   <div class="launchContainer">
-    <h3>Gold 001 is coming</h3>
-    <h1>10.27.15</h1>
-
-    <div class="">
-      <%= link_to "preview now", product_path(1), class: 'previewLink' %>
-    </div>
+    <!-- <h3>Gold 001 is coming</h3>
+    <h1>10.27.15</h1> -->
+    <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove.
+Scroll down for more #Gold001 obsessions.</h5>
+<%= image_tag "down.png", class: "" %>
+    <!-- <div class=""> -->
+      <%#= link_to "preview now", product_path(1), class: 'previewLink' %>
+    <!-- </div> -->
   </div>
   <!-- <div class="emptySpace">
 
   </div> -->
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_1A.jpg", class: "" %>
+    <%= image_tag "PatsGold_1B.jpg", class: "hoverImage" %>
+  </div>
+  <div class="instaImage">
+    <%= image_tag "PatsGold_2A.jpg", class: "" %>
+    <%= image_tag "PatsGold_2B.jpg", class: "hoverImage" %>
+  </div>
+  <div class="instaImage lastInsta noMobile">
+    <%= image_tag "PatsGold_Fan3.jpg" %>
+    <div class="hoverTextContainer">
+      <p>test</p>
+    </div>
+  </div>
+
+
+  <!-- ROW 2 START -->
+
+  <!-- ROW 2 END -->
+
+  <!-- ROW 3 START -->
+  <div class="instaImageLarge firstInsta">
+    <%= image_tag "PatsGold_5A.jpg" %>
+    <div class="hoverTextContainer">
+      <p>test</p>
+    </div>
+  </div>
+  <div class="instaImageLarge lastInsta">
+    <%= image_tag "PatsGold_6A.jpg" %>
+    <div class="hoverTextContainer">
+      <p>test</p>
+    </div>
+  </div>
+  <!--ROW 3 END  -->
+<!--  ROW 4 Start-->
+  <div class="instaImage firstInsta">
+    <%= image_tag "PatsGold_Fan7.jpg", class: "" %>
     <div class="hoverTextContainer">
       <p>test</p>
     </div>
   </div>
   <div class="instaImage">
-    <%= image_tag "PatsGold_2A.jpg", class: "" %>
+    <%= image_tag "PatsGold_Fan8.jpg", class: "" %>
     <div class="hoverTextContainer">
       <p>test</p>
     </div>
@@ -30,18 +67,9 @@
       <p>test</p>
     </div>
   </div>
-  <div class="instaImageLarge firstInsta">
-    <%= image_tag "instaLarge1.jpg" %>
-    <div class="hoverTextContainer">
-      <p>test</p>
-    </div>
-  </div>
-  <div class="instaImageLarge lastInsta">
-    <%= image_tag "instaLarge2.jpg" %>
-    <div class="hoverTextContainer">
-      <p>test</p>
-    </div>
-  </div>
+<!-- ROW 4 END -->
+
+
   <div class="instaVideo firstInsta">
     <%= video_tag "NoSound-1-reduced.mp4", controls: true %>
   </div>

@@ -2,10 +2,18 @@
 </div>
 <div class="instaFeed clearfix">
   <div class="launchContainer">
-    <!-- <h3>Gold 001 is coming</h3>
-    <h1>10.27.15</h1> -->
-    <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove.
-Scroll down for more #Gold001 obsessions.</h5>
+    <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove.</h5>
+    <div class="terminalContainer">
+      <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
+      <p><!--<span>01</span>-->&lt; &nbsp;sign up for priority access&nbsp; &gt;</p>
+      <p><!--<span>02</span>--><span class="blinker">&nbsp;</span> &nbsp;<%= email_field(:email, :address, {id: "email", placeholder: "enter email here"}) %>
+        <button type="button" id="subscribe">SUBMIT</button>
+        <%#= button_tag(type: 'button', {id: "subscribe"}) %></p>
+      <!-- <p><span>03</span>&lt; &nbsp;<%= submit_tag("Send", {id: "subscribe"}) %></p> -->
+      <!-- <p id="response"><span>04</span>&lt; &nbsp;</p> -->
+      <% end %>
+    </div>
+    <p class="scrollDown">Scroll down for more #Gold001 obsessions.</p>
 <%= image_tag "down.png", class: "" %>
     <!-- <div class=""> -->
       <%#= link_to "preview now", product_path(1), class: 'previewLink' %>
@@ -17,8 +25,7 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_1A.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@voguemagazine @patrickdemarchelierofficial @Palomija
-</p>
+      <p>@voguemagazine</br>@patrickdemarchelierofficial</br>@Palomija</p>
     </div>
     <%#= image_tag "PatsGold_1B.jpg", class: "hoverImage" %>
   </div>
@@ -58,7 +65,7 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage">
     <%= image_tag "PatsGold_Fan8.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@styledbyhrush @karrueche</p>
+      <p>@styledbyhrush</br>@karrueche</p>
     </div>
   </div>
   <div class="instaImage lastInsta noMobile">
@@ -70,7 +77,7 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_Fan10.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@violetgrey @kimkardashian @benhassett</p>
+      <p>@violetgrey</br>@kimkardashian</br>@benhassett</p>
     </div>
   </div>
   <div class="instaImage">
@@ -98,7 +105,7 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_Fan15.png", class: "" %>
     <div class="hoverTextContainer">
-      <p>@1maryphillips @KhloeKardashian</p>
+      <p>@1maryphillips</br>@KhloeKardashian</p>
     </div>
   </div>
   <div class="instaImage">
@@ -131,7 +138,7 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_Fan21.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@violetgrey @kimkardashian @benhassett</p>
+      <p>@violetgrey</br>@kimkardashian</br>@benhassett</p>
     </div>
   </div>
   <div class="instaImage">
@@ -149,13 +156,13 @@ Scroll down for more #Gold001 obsessions.</h5>
   <div class="instaImage firstInsta">
     <%= image_tag "PatsGold_Fan24.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@voguemagazine @patrickdemarchelierofficial @imaanhammam</p>
+      <p>@voguemagazine</br>@patrickdemarchelierofficial</br>@imaanhammam</p>
     </div>
   </div>
   <div class="instaImage">
     <%= image_tag "PatsGold_Fan25.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@pacorabanne @juliendossena</p>
+      <p>@pacorabanne</br>@juliendossena</p>
     </div>
   </div>
   <div class="instaImage lastInsta noMobile">

@@ -1,4 +1,17 @@
 $(document).ready ->
+  isMobile = ->
+    try
+      document.createEvent 'TouchEvent'
+      return true
+    catch e
+      return false
+    return
+
+  if isMobile() == true
+    $('.instaImage').click ->
+      $(this).siblings().removeClass 'active'
+      $(this).toggleClass 'active'
+      return
   $ ->
     do ->
       if $('#email').length

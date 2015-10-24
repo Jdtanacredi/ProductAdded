@@ -128,6 +128,8 @@ body {
   #email::-moz-placeholder {color: #fff;font-family: 'courier';}
   #email:-ms-input-placeholder {color: #fff;font-family: 'courier';}
 }
+.emailMessage span {font-size: 16px;}
+
 input[type=email]:focus {
   box-shadow: 0 0 5px rgba(255, 255, 255, 1);
   border: 1px solid white;
@@ -384,8 +386,37 @@ input[type=email]:focus {
   }
 }
 
+//  LIGHTBOX CSS START
 
+.lightbox {
+	/** Default lightbox to hidden */
+	display: none;
 
+	/** Position and style */
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+}
+
+.lightbox img {
+	/** Pad the lightbox image */
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	/** Remove default browser outline */
+	outline: none;
+
+	/** Unhide lightbox **/
+	display: block;
+}
 
 // MOBILE
 @media handheld, screen and (max-width: 700px) {

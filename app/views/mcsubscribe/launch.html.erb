@@ -14,6 +14,7 @@
       <!-- <p id="response"><span>04</span>&lt; &nbsp;</p> -->
       <% end %>
     </div>
+    <p class="emailMessage"></p>
     <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove</h5>
     <p class="scrollDown">Scroll down for more #Gold001 obsessions</p>
 <%= image_tag "down.png", class: "downArrow" %>
@@ -24,13 +25,18 @@
   <!-- <div class="emptySpace">
 
   </div> -->
-  <div class="instaImage firstInsta">
-    <%= image_tag "PatsGold_1A.jpg", class: "" %>
+  <div class="instaImage firstInsta"><a href="#img1">
+    <%= image_tag "PatsGold_Fan1.jpg", class: "" %>
     <div class="hoverTextContainer">
-      <p>@Palomija</br>@voguemagazine</br>@patrickdemarchelierofficial</p>
+      <p>@Palomija</p>
     </div>
+    </a>
     <%#= image_tag "PatsGold_1B.jpg", class: "hoverImage" %>
   </div>
+  <a href="#_" class="lightbox" id="img1">
+    <%= image_tag "PatsGold_Fan1.jpg", class: "" %>
+    <p style="text-decoration:none; color:white;">@Palomija</p>
+  </a>
   <div class="instaImage">
     <%= image_tag "PatsGold_2A.jpg", class: "" %>
     <%= image_tag "PatsGold_2B.jpg", class: "hoverImage" %>

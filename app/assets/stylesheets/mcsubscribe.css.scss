@@ -376,6 +376,8 @@ input[type=email]:focus {
   p {
     position: relative;
     display: inline-block;
+    text-decoration: none;
+    color: #fff;
     top: 50%;
     -webkit-transform: translateY(-50%); /* IE */
         -ms-transform: translateY(-50%); /* Safari */
@@ -391,7 +393,7 @@ input[type=email]:focus {
 .lightbox {
 	/** Default lightbox to hidden */
 	display: none;
-
+  text-decoration: none;
 	/** Position and style */
 	position: fixed;
 	z-index: 999;

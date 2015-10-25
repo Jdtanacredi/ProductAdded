@@ -46,7 +46,11 @@ body {background-color: #000;}
 }
 .openClose {
   display: none;
+  margin-bottom: 15px;
   p {margin: 0;}
+}
+.applicationOpenClose p {
+  margin: 15px 0;
 }
 // TOGGLE BOX END
 
@@ -85,6 +89,10 @@ footer {
   .thumbnailContainer {display: none;}
   .thumbnailContainer.mobileThumbContainer {
     display: block;
+    clear: both;
+  }
+  .toggleBox.application {
+    margin-bottom: 60px;
   }
 }
 

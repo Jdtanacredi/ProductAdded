@@ -1,4 +1,8 @@
 class PurchasesController < ApplicationController
+  def new
+    @purchase = Purchase.new
+  end
+
   def create
     @purchase = Purchase.new(
       total_price_in_cents: params[:total_price_in_cents],

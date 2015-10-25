@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get 'mcsubscribe/launch'
 
   resources :products, only: [:index, :show]
-  resources :purchases, only: [:create]
+  resources :purchases, only: [:new, :create]
 end

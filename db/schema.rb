@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025023750) do
+ActiveRecord::Schema.define(version: 20151025191024) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.decimal  "price"
-    t.float    "amount"
+    t.integer  "price",      limit: 2
+    t.integer  "amount",     limit: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

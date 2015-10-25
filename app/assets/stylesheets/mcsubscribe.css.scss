@@ -408,6 +408,7 @@ input[type=email]:focus {
 .lightbox img {
 	/** Pad the lightbox image */
 	max-width: 90%;
+  min-width: 350px;
 	max-height: 80%;
 	margin-top: 2%;
 }

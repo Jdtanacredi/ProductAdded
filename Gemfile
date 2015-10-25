@@ -4,6 +4,7 @@ gem 'mailchimp-api'
 gem "font-awesome-rails"
 gem "figaro"
 gem 'jwt'
+gem 'stripe'
 
 group :development, :test do
 	gem 'pry'

@@ -1,4 +1,5 @@
 class Purchase < ActiveRecord::Base
+  belongs_to :product
 
   validates_presence_of :total_price_in_cents, :stripe_token
 

@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017211337) do
-
-  create_table "charges", force: true do |t|
-    t.integer  "product_id"
-    t.string   "stripe_token"
-    t.integer  "quantity"
-    t.integer  "total_price_in_cents"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "charges", ["product_id"], name: "index_charges_on_product_id"
+ActiveRecord::Schema.define(version: 20151025023750) do
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -31,5 +20,16 @@ ActiveRecord::Schema.define(version: 20151017211337) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "purchases", force: true do |t|
+    t.integer  "product_id"
+    t.string   "stripe_token"
+    t.integer  "quantity"
+    t.integer  "total_price_in_cents"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["product_id"], name: "index_purchases_on_product_id"
 
 end

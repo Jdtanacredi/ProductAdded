@@ -32,12 +32,12 @@
   </div>
   <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a>
 
-<%= form_for Charge.new do |f| %>
-  <%= f.hidden_field :product_id, value: @product.id %>
-  <%= f.hidden_field :quantity, value: '1' %>
-  <%= f.hidden_field :stripe_token %>
-  <button type="button" id="customButton">Pay with card</button>
-<% end %>
+<%#= form_for Purchase.new do |f| %>
+  <%#= f.hidden_field :product_id, value: @product.id %>
+  <%#= f.hidden_field :quantity, value: '1' %>
+  <%#= f.hidden_field :stripe_token %>
+  <!-- <button type="button" id="customButton">Pay with card</button> -->
+<%# end %>
 
 <script type="text/javascript">
 // PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
@@ -102,6 +102,7 @@
 		<div class="modal__dialog">
 			<div class="modal__content">
         <form action="" method="POST" id="payment-form"
+      data-type="charge"
       data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
       data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
       data-charge="<%= @chargeJSON %>"
@@ -229,7 +230,7 @@
       <p>Taxes: $<span class="quaderno-taxes"></span></p>
       <p>Total: $<span class="quaderno-total"></span></p>
 
-      <button type="submit">Pay Now</button>
+      <button type="submit" id="pay-now">Pay Now</button>
     </form>
 				<!-- modal close button -->
 				<a href="" class="modal__close demo-close">
@@ -243,9 +244,7 @@
   // EXAMPLE 2 with custom form.
   var stripeResponseHandler = function(status, response) {
           var $form = $('#payment-form');
-          debugger;
           if (response.error) {
-            debugger;
             // Show the errors on the form
             $form.find('.payment-errors').text(response.error.message);
             $form.find('button').prop('disabled', false);
@@ -254,6 +253,7 @@
             var token = response.id;
             // Insert the token into the form so it gets submitted to the server
             $form.append($('<input type="hidden" data-quaderno="cardToken" />').val(token));
+            debugger
             // create the charge in Stripe via Quaderno and submit
             Quaderno.createCharge({
               success: function(status, response){
@@ -270,11 +270,11 @@
           }
         };
         jQuery(function($) {
-          $('#payment-form').click(function(e) {
+          $('#pay-now').click(function(e) {
             var $form = $(this);
             // This identifies your website in the createToken call below
-            debugger;
-            Stripe.setPublishableKey($(this).data('gateway-key'));
+            // Stripe.setPublishableKey($(this).data('gateway-key'));
+            Stripe.setPublishableKey("<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>");
             // Disable the submit button to prevent repeated clicks
             $form.find('button').prop('disabled', true);
             // Get the card token from Stripe

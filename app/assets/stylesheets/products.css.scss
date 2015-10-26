@@ -24,13 +24,14 @@ body {background-color: #000;}
   h1 {
     margin: 0;
     font-weight: 100;
+    margin-bottom: 2px;
   }
 }
 
 .productDetails {
   position: relative;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #a9a9a9;
   padding: 15px 0;
   p {
     margin: 0;

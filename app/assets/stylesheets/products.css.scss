@@ -76,7 +76,6 @@ body {background-color: #000;}
 
 .thumbnailContainer {
   padding: 20px 0;
-  border-bottom: 1px solid #fff;
   .productThumb {
     width: 18%;
     float: left;
@@ -117,7 +116,7 @@ footer {
 }
 .thumbnailContainer.mobileThumbContainer {display: none;}
 
-@media handheld, screen and (max-width: 700px) {
+@media handheld, screen and (max-width: 850px) {
   .productImageSection {width: 100%;}
   .productCopySection {width: 95%;}
   .thumbnailContainer {display: none;}
@@ -127,6 +126,9 @@ footer {
   }
   .toggleBox.application {
     margin-bottom: 60px;
+  }
+  .productCopySection {
+    padding-top: 30px;
   }
 }
 

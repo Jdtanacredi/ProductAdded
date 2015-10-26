@@ -54,8 +54,18 @@ body {background-color: #000;}
 
 }
 
-
-
+.contentsTitle {
+  // border-top: 1px solid #a9a9a9;
+  padding-top: 15px;
+  text-transform: uppercase;
+}
+.contentsSection {
+  border-bottom: 1px solid #a9a9a9;
+  padding-bottom: 15px;
+  p {
+    margin: 0;
+  }
+}
 // TOGGLE BOX START
 .toggleBox {
 	border-bottom: 1px solid #a9a9a9;
@@ -117,6 +127,7 @@ footer {
   border: 1px solid #fff;
 }
 .thumbnailContainer.mobileThumbContainer {display: none;}
+
 
 @media handheld, screen and (max-width: 850px) {
   .productImageSection {width: 100%;}

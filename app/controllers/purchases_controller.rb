@@ -24,7 +24,6 @@ class PurchasesController < ApplicationController
     )
 
     @shipping_address = ShippinAddress.new(
-      shipping_address: {
       first_name: params[:first_name],
       last_name: params[:last_name],
       street_line_1: params[:street_line_1],

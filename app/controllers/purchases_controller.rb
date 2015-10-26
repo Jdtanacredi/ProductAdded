@@ -40,9 +40,9 @@ class PurchasesController < ApplicationController
       @billing_address.save
       @shipping_address.save
 
-      # success redirect
+      render json: "success!"
     else
-      # fail redirect
+      render json: "fail!"
     end
   end
 

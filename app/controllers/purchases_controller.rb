@@ -23,7 +23,7 @@ class PurchasesController < ApplicationController
       vat_number: params[:vat_number]
     )
 
-    @shipping_address = ShippinAddress.new(
+    @shipping_address = ShippingAddress.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
       street_line_1: params[:street_line_1],

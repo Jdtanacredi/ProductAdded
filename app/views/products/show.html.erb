@@ -151,7 +151,7 @@
         <div class="form-row">
           <label>
             <span>Postal Code</span>
-            <input data-quaderno="postal-code" name=="postal-code" />
+            <input data-quaderno="postal-code" name="postal-code" />
           </label>
         </div>
 
@@ -220,6 +220,7 @@
       </fieldset>
 
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="product-name" value="Gold001">
 
       <p>Subtotal: $<span class="quaderno-subtotal"></span></p>
       <p>Taxes: $<span class="quaderno-taxes"></span></p>

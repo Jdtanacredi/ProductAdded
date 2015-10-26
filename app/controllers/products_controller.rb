@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
     @chargeJSON = JWT.encode({
       iat: Time.now.to_i,
-      amount: 40000,
+      amount: 4000,
       currency: 'USD'
     }, ENV['QUAD_TEST_SECRET'])
   end

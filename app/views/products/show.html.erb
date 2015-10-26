@@ -96,6 +96,10 @@
     <%= image_tag "product/productImage4.jpg", class: "productThumb productImage4" %>
     <%= image_tag "product/productImage5.jpg", class: "productThumb productImage5" %>
   </div>
+
+  <div class="videoWrapper">
+    <iframe src="https://player.vimeo.com/video/143560694" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/143560694">Gold 001 How-to</a> from <a href="https://vimeo.com/user45207618">Pat Mcgrath</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+  </div>
 </section>
 
 <div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
@@ -260,6 +264,7 @@
                 // response contains the message and the Stripe customer id
                 $form.append($('<input type="hidden" name="transactionDetails" data-quaderno="transactionDetails" />').val(response.details));
                 // and re-submit the form
+                debugger;
                 $form.get(0).submit();
               },
               error: function(status, response){

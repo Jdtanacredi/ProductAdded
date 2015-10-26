@@ -1,6 +1,8 @@
 class Purchase < ActiveRecord::Base
   belongs_to :product
 
+  validates_presence_of :product, :stripe_token
+
   after_create :decrease_product_quantity
 
   def decrease_product_quantity

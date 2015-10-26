@@ -15,6 +15,7 @@ body {background-color: #000;}
 .imageSlide.productImage5 {display: none;}
 
 .productCopySection {
+  color: #a9a9a9;
   width: 45%;
   margin: 0 2.5%;
   float: left;
@@ -118,7 +119,7 @@ footer {
 
 @media handheld, screen and (max-width: 700px) {
   .productImageSection {width: 100%;}
-  .productCopySection {width: 100%;}
+  .productCopySection {width: 95%;}
   .thumbnailContainer {display: none;}
   .thumbnailContainer.mobileThumbContainer {
     display: block;

@@ -36,34 +36,17 @@
       <p>sold out</p>
     </div> -->
   </div>
-  <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a>
 
-<script type="text/javascript">
-// PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
- // key: "pk_live_xbq8EcoXjbrpSZhhy6D" // public normal key
+  <p>Waiting List</p>
 
- // EXAMPLE 1 with popup form built in.
-// var handler = QuadernoCheckout.configure({
-//   key: 'pk_test_kyhpqKz3ssMUsLbzsqWj', //Key for sandbox
-//   locale: 'en',
-//   billingAddress: true,
-//   callback: function(data) {
-//     console.log(data);
-//     $('#new_charge').find("#charge_stripe_token").val('foo');
-//   }
-// });
-// $('#customButton').click(function(e) {
-//  handler.open({
-//       type: "charge",
-//       amount: "<%= @product.price %>",
-//       currency: 'USD',
-//       charge: "<%= @chargeJSON %>",
-//       description: 'Awesome charge'
-//       // billing-address:
-//  });
-// });
+  <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
+  <!-- <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p> -->
+  <p><%= email_field(:email, :address, {id: "email", placeholder: "enter email"}) %>
+    <button type="button" id="subscribe">SUBMIT</button></p>
+  <% end %>
 
-</script>
+  <!-- <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a> -->
+
   <!-- <div class="toggleBox clearfix"> -->
     <!-- <div class="toggleHeader clearfix"> -->
       <p class="toggleTitle contentsTitle">contents</p>

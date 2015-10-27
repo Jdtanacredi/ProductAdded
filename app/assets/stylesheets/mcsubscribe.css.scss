@@ -129,6 +129,25 @@ body {
   #email::-moz-placeholder {color: #fff;font-family: 'courier';}
   #email:-ms-input-placeholder {color: #fff;font-family: 'courier';}
 }
+#email {background: #000; border: 1px solid #a9a9a9; color: #a9a9a9; font-size: 16px;letter-spacing: 2px; min-width: 133px;}
+#email::-webkit-input-placeholder {color: #a9a9a9; font-family: 'courier';}
+#email:-moz-placeholder {color: #a9a9a9;font-family: 'courier';}
+#email::-moz-placeholder {color: #a9a9a9;font-family: 'courier';}
+#email:-ms-input-placeholder {color: #a9a9a9;font-family: 'courier';}
+#subscribe {
+  background-color: black;
+  color: #a9a9a9;
+  border: none;
+  font-family: 'courier';
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  &:hover {
+    color: #FFF;
+  }
+}
+
 .emailMessage span {font-size: 16px;}
 
 input[type=email]:focus {

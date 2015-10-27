@@ -4,16 +4,21 @@
   <div class="launchContainer">
     <h3>BUY YOUR EXCLUSIVE GOLD 001 PIGMENT</h3>
     <h1>10.29.15</h1>
-    <div class="terminalContainer">
+
+    <a class="previewButton" href="/products/1">
+      <div class="previewNow">
+        preview now
+      </div>
+    </a>
+
+    <!-- <div class="terminalContainer">
       <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
-      <p><!--<span>01</span>-->&lt; &nbsp;sign up for priority access&nbsp; &gt;</p>
-      <p><!--<span>02</span>--><span class="blinker">&nbsp;</span> &nbsp;<%= email_field(:email, :address, {id: "email", placeholder: "enter email here"}) %>
-        <button type="button" id="subscribe">SUBMIT</button>
-        <%#= button_tag(type: 'button', {id: "subscribe"}) %></p>
-      <!-- <p><span>03</span>&lt; &nbsp;<%= submit_tag("Send", {id: "subscribe"}) %></p> -->
-      <!-- <p id="response"><span>04</span>&lt; &nbsp;</p> -->
+      <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p>
+      <p><span class="blinker">&nbsp;</span> &nbsp;<%= email_field(:email, :address, {id: "email", placeholder: "enter email here"}) %>
+        <button type="button" id="subscribe">SUBMIT</button></p>
       <% end %>
-    </div>
+    </div> -->
+
     <p class="emailMessage"></p>
     <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove</h5>
     <p class="scrollDown">Scroll down for more #Gold001 obsessions</p>

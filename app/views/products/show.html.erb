@@ -1,6 +1,10 @@
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="https://js.quaderno.io/v2/"></script>
 
+<section class="navSpacer">
+  &nbsp;
+</section>
+
 <section class="productImageSection clearfix">
   <div class="mainImageContainer">
     <%= image_tag "product/productImage1.jpg", class: "imageSlide productImage1" %>
@@ -32,13 +36,6 @@
     </div> -->
   </div>
   <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a>
-
-<%#= form_for Purchase.new do |f| %>
-  <%#= f.hidden_field :product_id, value: @product.id %>
-  <%#= f.hidden_field :quantity, value: '1' %>
-  <%#= f.hidden_field :stripe_token %>
-  <!-- <button type="button" id="customButton">Pay with card</button> -->
-<%# end %>
 
 <script type="text/javascript">
 // PRIVATE SANDBOX SECRET sk_test_WjN6uvhQnG38hqqN_oiZ
@@ -107,15 +104,15 @@
 </section>
 
 <div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
-		<div class="modal__dialog">
-			<div class="modal__content">
-        <form action="/purchases" method="POST" id="payment-form"
-      data-type="charge"
-      data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
-      data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
-      data-charge="<%= @chargeJSON %>"
-      data-amount="4000"
-      data-taxes="excluded">
+	<div class="modal__dialog">
+		<div class="modal__content">
+      <form action="/purchases" method="POST" id="payment-form"
+    data-type="charge"
+    data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
+    data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
+    data-charge="<%= @chargeJSON %>"
+    data-amount="4000"
+    data-taxes="excluded">
 
       <span class="payment-errors"></span>
 
@@ -124,63 +121,63 @@
         <div class="form-row">
           <label>
             <span>* First Name / Company Name</span>
-            <input data-quaderno="first-name"/>
+            <input data-quaderno="first-name" name="first-name" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Last Name</span>
-            <input data-quaderno="last-name"/>
+            <input data-quaderno="last-name" name="last-name" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Email</span>
-            <input data-quaderno="email"/>
+            <input data-quaderno="email" name="email" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Street Line 1</span>
-            <input data-quaderno="street-line-1"/>
+            <input data-quaderno="street-line-1" name="street-line-1" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Street Line 2</span>
-            <input data-quaderno="street-line-2"/>
+            <input data-quaderno="street-line-2" name="street-line-2" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>City</span>
-            <input data-quaderno="city"/>
+            <input data-quaderno="city" name="city" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Postal Code</span>
-            <input data-quaderno="postal-code"/>
+            <input data-quaderno="postal-code" name="postal-code" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Region</span>
-            <input data-quaderno="region"/>
+            <input data-quaderno="region" name="region" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Country</span>
-            <select data-quaderno="country">
+            <select data-quaderno="country" name="country">
               <option value="US" selected>United States</option>
               <option value="GB">United Kingdom</option>
               <option value="DE">Germany</option>
@@ -196,14 +193,14 @@
         <div class="form-row">
           <label>
             <span>VAT Number</span>
-            <input data-quaderno="vat-number"/>
+            <input data-quaderno="vat-number" name="vat-number" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Coupon</span>
-            <input data-quaderno="coupon"/>
+            <input data-quaderno="coupon" />
           </label>
         </div>
       </fieldset>
@@ -234,6 +231,9 @@
         </div>
       </fieldset>
 
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="product-name" value="Gold001">
+
       <p>Subtotal: $<span class="quaderno-subtotal"></span></p>
       <p>Taxes: $<span class="quaderno-taxes"></span></p>
       <p>Total: $<span class="quaderno-total"></span></p>
@@ -251,57 +251,52 @@
 <script type="text/javascript">
   // EXAMPLE 2 with custom form.
   var stripeResponseHandler = function(status, response) {
-          var $form = $('#payment-form');
-          if (response.error) {
-            // Show the errors on the form
-            $form.find('.payment-errors').text(response.error.message);
-            $form.find('button').prop('disabled', false);
-          } else {
-            // token contains id, last4, and card type
-            var token = response.id;
-            // Insert the token into the form so it gets submitted to the server
-            $form.append($('<input type="hidden" data-quaderno="cardToken" />').val(token));
-            debugger
-            // create the charge in Stripe via Quaderno and submit
-            Quaderno.createCharge({
-              success: function(status, response){
-                // response contains the message and the Stripe customer id
-                $form.append($('<input type="hidden" name="transactionDetails" data-quaderno="transactionDetails" />').val(response.details));
-                // and re-submit the form
-                debugger;
-                $form.get(0).submit();
-              },
-              error: function(status, response){
-                $form.find('.payment-errors').text(response.message);
-                $form.find('button').prop('disabled', false);
-              }
-            });
-          }
-        };
-        jQuery(function($) {
-          $('#pay-now').click(function(e) {
-            var $form = $(this);
-            // This identifies your website in the createToken call below
-            // Stripe.setPublishableKey($(this).data('gateway-key'));
-            Stripe.setPublishableKey("<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>");
-            // Disable the submit button to prevent repeated clicks
-            $form.find('button').prop('disabled', true);
-            // Get the card token from Stripe
-            Stripe.card.createToken({
-              number: $('.card-number').val(),
-              cvc: $('.card-cvc').val(),
-              exp_month: $('.card-expiry-month').val(),
-              exp_year: $('.card-expiry-year').val()
-            }, stripeResponseHandler);
-            // Prevent the form from submitting with the default action
-            return false;
-          });
-        });
-
-  </script>
-
-
-
+    var $form = $('#payment-form');
+    if (response.error) {
+      // Show the errors on the form
+      $form.find('.payment-errors').text(response.error.message);
+      $form.find('button').prop('disabled', false);
+    } else {
+      // token contains id, last4, and card type
+      var token = response.id;
+      // Insert the token into the form so it gets submitted to the server
+      $form.append($('<input type="hidden" data-quaderno="cardToken" />').val(token));
+      $form.append($('<input type="hidden" name="stripe-token" />').val(token));
+      // create the charge in Stripe via Quaderno and submit
+      Quaderno.createCharge({
+        success: function(status, response){
+          // response contains the message and the Stripe customer id
+          $form.append($('<input type="hidden" name="transactionDetails" data-quaderno="transactionDetails" />').val(response.details));
+          // and re-submit the form
+          $form.get(0).submit();
+        },
+        error: function(status, response){
+          $form.find('.payment-errors').text(response.message);
+          $form.find('button').prop('disabled', false);
+        }
+      });
+    }
+  };
+  jQuery(function($) {
+    $('#pay-now').click(function(e) {
+      var $form = $(this);
+      // This identifies your website in the createToken call below
+      // Stripe.setPublishableKey($(this).data('gateway-key'));
+      Stripe.setPublishableKey("<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>");
+      // Disable the submit button to prevent repeated clicks
+      $form.find('button').prop('disabled', true);
+      // Get the card token from Stripe
+      Stripe.card.createToken({
+        number: $('.card-number').val(),
+        cvc: $('.card-cvc').val(),
+        exp_month: $('.card-expiry-month').val(),
+        exp_year: $('.card-expiry-year').val()
+      }, stripeResponseHandler);
+      // Prevent the form from submitting with the default action
+      return false;
+    });
+  });
+</script>
 
 
 <script type="text/javascript">

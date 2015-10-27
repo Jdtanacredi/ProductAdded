@@ -25,6 +25,7 @@ class PurchasesController < ApplicationController
     )
 
     @shipping_address = ShippingAddress.new(
+      email_address: params["email-address"],
       first_name: params["first-name"],
       last_name: params["last-name"],
       street_line_1: params["street-line-1"],

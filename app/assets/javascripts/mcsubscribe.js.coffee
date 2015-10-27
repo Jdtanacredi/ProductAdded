@@ -38,6 +38,7 @@ $(document).ready ->
       $('.colorBackground').css 'z-index', '5'
       return
     $('.confirmationTerminal').css 'visibility', 'visible'
+    $('.newsletterConfirmation').text 'success'
     $('#email').blur()
     $('#subscribe').blur()
     console.log response

@@ -36,15 +36,6 @@
       <p>sold out</p>
     </div> -->
   </div>
-
-  <p>Waiting List</p>
-
-  <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
-  <!-- <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p> -->
-  <p><%= email_field(:email, :address, {id: "email", placeholder: "enter email"}) %>
-    <button type="button" id="subscribe">SUBMIT</button></p>
-  <% end %>
-
   <!-- <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a> -->
 
   <!-- <div class="toggleBox clearfix"> -->
@@ -78,8 +69,8 @@
     <%= image_tag "product/productImage1.jpg", class: "productThumb productImage1" %>
     <%= image_tag "product/productImage2.jpg", class: "productThumb productImage2" %>
     <%= image_tag "product/productImage3.jpg", class: "productThumb productImage3" %>
-    <%= image_tag "product/productImage4.jpg", class: "productThumb productImage4" %>
-    <%= image_tag "product/productImage5.jpg", class: "productThumb productImage5" %>
+    <%#= image_tag "product/productImage4.jpg", class: "productThumb productImage4" %>
+    <%#= image_tag "product/productImage5.jpg", class: "productThumb productImage5" %>
   </div>
 
   <div class="videoWrapper">
@@ -342,6 +333,13 @@ Modal.init();
   <a class="list-group-item" target="_blank" href="https://www.facebook.com/PatMcGrathReal"><i class="fa fa-facebook-square"></i>&nbsp;</a>
   <a class="list-group-item" target="_blank" href="https://twitter.com/patmcgrathreal"><i class="fa fa-twitter"></i>&nbsp;</a>
   <div class="footerBranding">
-    &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a>
+    &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a> <span>|</span> Waiting List:
+
+    <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
+    <!-- <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p> -->
+    <%= email_field(:email, :address, {id: "email", placeholder: "enter email"}) %>
+      <button type="button" id="subscribe">SUBMIT</button>
+    <% end %>
+    <span class="newsletterConfirmation"></span>
   </div>
 </footer>

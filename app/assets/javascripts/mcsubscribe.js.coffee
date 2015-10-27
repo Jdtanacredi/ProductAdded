@@ -12,12 +12,7 @@ $(document).ready ->
       $(this).siblings().removeClass 'active'
       $(this).toggleClass 'active'
       return
-  $ ->
-    do ->
-      if $('#email').length
-        return document.getElementById('email').focus()
-      return
-    return
+
 # Hide animation after email submit
   emailComplete = (response) ->
     animationsTest = (callback) ->

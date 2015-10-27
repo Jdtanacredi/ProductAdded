@@ -149,7 +149,9 @@ footer {
     padding-top: 30px;
   }
 }
-
+@media handheld, screen and (max-width: 600px) {
+  .videoWrapper {margin-bottom: 160px;}
+}
 
 // MODAL STYLING
 

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root :to =>'mcsubscribe#launch'
   get 'mcsubscribe/launch'
 
+  get 'success', to: 'products#success'
+
   resources :products, only: [:index, :show]
   resources :purchases, only: [:new, :create]
 end

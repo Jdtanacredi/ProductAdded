@@ -41,9 +41,9 @@ class PurchasesController < ApplicationController
       @billing_address.save
       @shipping_address.save
 
-      render json: "success!"
+      redirect_to '/success'
     else
-      render json: "fail!"
+      render json: 'An error has occurred. Please go back and try again.'
     end
   end
 

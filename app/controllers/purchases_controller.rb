@@ -60,7 +60,6 @@ class PurchasesController < ApplicationController
         )
         @shipping_address.save
       end
-      binding.pry
 
       redirect_to '/success'
     else

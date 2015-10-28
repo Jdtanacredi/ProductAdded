@@ -36,7 +36,7 @@
       <p>sold out</p>
     </div> -->
   </div>
-  <!-- <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a> -->
+  <a href="" data-modal="#modal2" class="modal__trigger">BUY NOW</a>
 
   <!-- <div class="toggleBox clearfix"> -->
     <!-- <div class="toggleHeader clearfix"> -->
@@ -77,6 +77,153 @@
     <iframe src="https://player.vimeo.com/video/143704196" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
   </div>
 </section>
+
+<div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+        <form action="" method="POST" id="payment-form"
+      data-type="charge"
+      data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
+      data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
+      data-charge="<%= @chargeJSON %>"
+      data-amount="4000"
+      data-taxes="excluded">
+
+      <span class="payment-errors"></span>
+
+      <fieldset>
+        <legend>Customer</legend>
+        <div class="form-row">
+          <label>
+            <span>* First Name / Company Name</span>
+            <input data-quaderno="first-name"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Last Name</span>
+            <input data-quaderno="last-name"/>
+          </label>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Billing Address</legend>
+
+        <div class="form-row">
+          <label>
+            <span>Email</span>
+            <input data-quaderno="email"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Street Line 1</span>
+            <input data-quaderno="street-line-1"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Street Line 2</span>
+            <input data-quaderno="street-line-2"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>City</span>
+            <input data-quaderno="city"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Postal Code</span>
+            <input data-quaderno="postal-code"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Region</span>
+            <input data-quaderno="region"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Country</span>
+            <select data-quaderno="country">
+              <option value="US" selected>United States</option>
+              <option value="GB">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+              <option value="IT">Italy</option>
+              <option value="ES">Spain</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>VAT Number</span>
+            <input data-quaderno="vat-number"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>Coupon</span>
+            <input data-quaderno="coupon"/>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Credit Card Data</legend>
+        <div class="form-row">
+          <label>
+            <span>* Card Number</span>
+            <input class="card-number" data-quaderno="number"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>* CVC</span>
+            <input class="card-cvc" data-quaderno="cvc" type="password"/>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>
+            <span>* Expiration (MM/YYYY)</span>
+            <input class="card-expiry-month" type="text" size="2" data-quaderno="exp-month"/>
+          </label>
+          <span> / </span>
+          <input class="card-expiry-year" type="text" size="4" data-quaderno="exp-year"/>
+        </div>
+      </fieldset>
+
+      <p>Subtotal: $<span class="quaderno-subtotal"></span></p>
+      <p>Taxes: $<span class="quaderno-taxes"></span></p>
+      <p>Total: $<span class="quaderno-total"></span></p>
+
+      <button type="submit" id="pay-now">Pay Now</button>
+    </form>
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+			</div>
+		</div>
+	</div>
 
 <script type="text/javascript">
   // EXAMPLE 2 with custom form.

@@ -44,7 +44,20 @@ class PurchasesController < ApplicationController
       @billing_address.save
 
       if params["shipping-same"] == "shipping-true"
-        @shipping_address = @billing_address
+        @shipping_address = ShippingAddress.new(
+          first_name: params["first-name"],
+          last_name: params["last-name"],
+          street_line_1: params["street-line-1"],
+          street_line_2: params["street-line-2"],
+          city: params["city"],
+          postal_code: params["postal-code"],
+          region: params["region"],
+          country: params["country"],
+          vat_number: params["vat-number"],
+          email_address: params["email-address"],
+          phone_number: params["phone-number"],
+          purchase: @purchase
+        )
         @shipping_address.save
       end
 

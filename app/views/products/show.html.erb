@@ -79,85 +79,89 @@
 </section>
 
 <div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
-		<div class="modal__dialog">
-			<div class="modal__content">
-        <form action="" method="POST" id="payment-form"
-      data-type="charge"
-      data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
-      data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
-      data-charge="<%= @chargeJSON %>"
-      data-amount="4000"
-      data-taxes="excluded">
+	<div class="modal__dialog">
+		<div class="modal__content">
+      <form action="/purchases" method="POST" id="payment-form"
+    data-type="charge"
+    data-gateway-key="pk_test_6cbMwNi5VCVbHbIAAcmzXIdL"
+    data-key="pk_test_kyhpqKz3ssMUsLbzsqWj"
+    data-charge="<%= @chargeJSON %>"
+    data-amount="4000"
+    data-taxes="excluded">
 
       <span class="payment-errors"></span>
-
       <fieldset>
-        <legend>Customer</legend>
+        <legend>Customer Information</legend>
         <div class="form-row">
           <label>
             <span>* First Name / Company Name</span>
-            <input data-quaderno="first-name"/>
+            <input data-quaderno="first-name" name="first-name" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Last Name</span>
-            <input data-quaderno="last-name"/>
+            <input data-quaderno="last-name" name="last-name" />
           </label>
         </div>
-
-      </fieldset>
-
-      <fieldset>
-        <legend>Billing Address</legend>
 
         <div class="form-row">
           <label>
             <span>Email</span>
-            <input data-quaderno="email"/>
+            <input data-quaderno="email" name="email-address" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone-number" />
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Billing Address</legend>
+        <div class="form-row">
+          <label>
             <span>Street Line 1</span>
-            <input data-quaderno="street-line-1"/>
+            <input data-quaderno="street-line-1" name="street-line-1" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Street Line 2</span>
-            <input data-quaderno="street-line-2"/>
+            <input data-quaderno="street-line-2" name="street-line-2" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>City</span>
-            <input data-quaderno="city"/>
+            <input data-quaderno="city" name="city" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Postal Code</span>
-            <input data-quaderno="postal-code"/>
+            <input data-quaderno="postal-code" name="postal-code" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Region</span>
-            <input data-quaderno="region"/>
+            <input data-quaderno="region" name="region" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
             <span>Country</span>
-            <select data-quaderno="country">
+            <select data-quaderno="country" name="country">
               <option value="US" selected>United States</option>
               <option value="GB">United Kingdom</option>
               <option value="DE">Germany</option>
@@ -173,17 +177,74 @@
         <div class="form-row">
           <label>
             <span>VAT Number</span>
-            <input data-quaderno="vat-number"/>
+            <input data-quaderno="vat-number" name="vat-number" />
           </label>
         </div>
 
-        <div class="form-row">
+        <!-- <div class="form-row">
           <label>
             <span>Coupon</span>
-            <input data-quaderno="coupon"/>
+            <input data-quaderno="coupon" />
           </label>
-        </div>
+        </div> -->
       </fieldset>
+
+
+      <fieldset>
+      <legend>Shipping Address</legend>
+      <div class="form-row">
+        <label>
+          <span>Street Line 1</span>
+          <input name="shipping-street-line-1" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Street Line 2</span>
+          <input name="shipping-street-line-2" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>City</span>
+          <input name="shipping-city" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Postal Code</span>
+          <input name="shipping-postal-code" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>State / Region</span>
+          <input name="shipping-region" />
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>
+          <span>Country</span>
+          <select name="shipping-country">
+            <option value="US" selected>United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="DE">Germany</option>
+            <option value="FR">France</option>
+            <option value="IT">Italy</option>
+            <option value="ES">Spain</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+
 
       <fieldset>
         <legend>Credit Card Data</legend>
@@ -210,6 +271,9 @@
           <input class="card-expiry-year" type="text" size="4" data-quaderno="exp-year"/>
         </div>
       </fieldset>
+
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="product-name" value="Gold001">
 
       <p>Subtotal: $<span class="quaderno-subtotal"></span></p>
       <p>Taxes: $<span class="quaderno-taxes"></span></p>

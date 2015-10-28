@@ -35,10 +35,9 @@ $(document).ready ->
     $('.confirmationTerminal').css 'visibility', 'visible'
     $('.newsletterConfirmation').text 'success'
     $('#email').blur()
-    $('#subscribe').blur()
-    console.log response
+    $('#subscribe').blur().attr('disabled','disabled')
 
-  $("#subscribe").click ->
+  $("#mcsubscribe").submit (e) ->
     $.ajax({
       type: "POST",
       url: "/mcsubscribe/subscribe",
@@ -69,7 +68,8 @@ $(document).ready ->
         console.log data
         return false
     })
-
+    e.preventDefault()
+    return false
 
 imgArray = [
   'Color-01'

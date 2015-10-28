@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= jquery.countdown.min
 //= require turbolinks
+//= require jquery.turbolinks
 //= require jsrsasign-latest-all-min
 //= require json-sans-eval
 //= require jws-3.3

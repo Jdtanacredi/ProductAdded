@@ -378,3 +378,21 @@ footer {
 /**
  * Material Modal CSS END
  */
+// SUCCESS PAGE START
+.successContainer {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  h2 {
+    padding-top: 30vh;
+    color: #fff;
+  }
+  p {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 3;
+  }
+}
+
+// SUCCESS PAGE END

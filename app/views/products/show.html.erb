@@ -981,7 +981,8 @@ Modal.init();
     <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
     <!-- <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p> -->
     <%= email_field(:email, :address, {id: "email", placeholder: "enter email"}) %>
-      <button type="button" id="subscribe">SUBMIT</button>
+      <input id="subscribe" type="submit">
+      <!-- <button type="button" id="subscribe">SUBMIT</button> -->
     <% end %>
     <span class="newsletterConfirmation"></span>
   </div>

@@ -306,9 +306,9 @@ input[type=email]:focus {
   }
 }
 
-.previewButton {
-  text-decoration: none;
+
   .previewNow {
+    cursor: pointer;
     background: #000;
     color: #fff;
     width: 250px;
@@ -316,7 +316,7 @@ input[type=email]:focus {
     margin: 20px auto;
     text-transform: uppercase;
   }
-}
+
 .emptySpace {
   width: 100vw;
   height: 100vh;

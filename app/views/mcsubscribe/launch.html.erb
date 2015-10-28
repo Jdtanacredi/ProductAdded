@@ -5,19 +5,16 @@
     <h3>BUY YOUR EXCLUSIVE GOLD 001 PIGMENT</h3>
     <h1>10.29.15</h1>
 
-    <a class="previewButton" href="/products/1">
       <div class="previewNow">
         preview now
       </div>
-    </a>
 
-    <!-- <div class="terminalContainer">
-      <%= form_tag('/mcsubscribe/subscribe', method: "post", id: "mcsubscribe", remote: "true",:authenticity_token => true) do -%>
-      <p>&lt; &nbsp;sign up for priority access&nbsp; &gt;</p>
-      <p><span class="blinker">&nbsp;</span> &nbsp;<%= email_field(:email, :address, {id: "email", placeholder: "enter email here"}) %>
-        <button type="button" id="subscribe">SUBMIT</button></p>
-      <% end %>
-    </div> -->
+
+    <script type="text/javascript">
+      $('.previewNow').click(function() {
+        window.location.href = '/products/1';
+      });
+    </script>
 
     <p class="emailMessage"></p>
     <h5>Celebrating the inspiration, illumination and irreverence of all your #LabLove</h5>
@@ -94,7 +91,7 @@
   <div class="videoWrapper instaImageFull">
       <iframe src="https://player.vimeo.com/video/143564481" width="500" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
  </div>
- 
+
 
   <!-- ROW 2 START -->
 

@@ -400,24 +400,16 @@
         <div class="form-row">
           <label>
             <span>Ship to this address?</span>
-            <select name="shipping-same">
+            <select name="shipping-same" id="shippingSelect">
               <option value="shipping-true">Yes</option>
               <option value="shipping-false">No</option>
             </select>
           </label>
         </div>
-        <!-- <div class="form-row">
-          <label>
-            <span>Coupon</span>
-            <input data-quaderno="coupon" />
-          </label>
-        </div> -->
       </fieldset>
 
 
-
-
-      <fieldset>
+      <fieldset class="shippingField">
       <legend>Shipping Address</legend>
       <div class="form-row">
         <label>
@@ -998,3 +990,13 @@ Modal.init();
     <span class="newsletterConfirmation"></span>
   </div>
 </footer>
+
+<script type="text/javascript">
+$('#shippingSelect').change(function() {
+if ($(this).val() === 'shipping-false') {
+  $('.shippingField').css('display', 'block');
+} else {
+  $('.shippingField').css('display', 'none');
+}
+});
+</script>

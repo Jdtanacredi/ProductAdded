@@ -43,8 +43,7 @@ class PurchasesController < ApplicationController
     if @purchase.save
       @billing_address.save
 
-binding.pry
-      if params["shipping-street-line-1"]
+      if params["shipping-same"] == "shipping-true"
         @shipping_address = @billing_address
         @shipping_address.save
       end

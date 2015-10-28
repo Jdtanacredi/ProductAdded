@@ -101,21 +101,21 @@
 
         <div class="form-row">
           <label>
-            <span>Last Name</span>
+            <span>* Last Name / Company Contact</span>
             <input data-quaderno="last-name" name="last-name" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
-            <span>Email</span>
+            <span>* Email</span>
             <input data-quaderno="email" name="email-address" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
-            <span>Phone Number</span>
+            <span>* Phone Number</span>
             <input type="tel" name="phone-number" />
           </label>
         </div>
@@ -146,15 +146,15 @@
 
         <div class="form-row">
           <label>
-            <span>Postal Code</span>
-            <input data-quaderno="postal-code" name="postal-code" />
+            <span>State / Region</span>
+            <input data-quaderno="region" name="region" />
           </label>
         </div>
 
         <div class="form-row">
           <label>
-            <span>Region</span>
-            <input data-quaderno="region" name="region" />
+            <span>Postal Code</span>
+            <input data-quaderno="postal-code" name="postal-code" />
           </label>
         </div>
 
@@ -397,6 +397,15 @@
           </label>
         </div>
 
+        <div class="form-row">
+          <label>
+            <span>Ship to this address?</span>
+            <select>
+              <option value="shipping-same" name="shipping-same">Yes</option>
+              <option value="shipping-different" name="shipping-different">No</option>
+            </select>
+          </label>
+        </div>
         <!-- <div class="form-row">
           <label>
             <span>Coupon</span>
@@ -404,6 +413,8 @@
           </label>
         </div> -->
       </fieldset>
+
+
 
 
       <fieldset>

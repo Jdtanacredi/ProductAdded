@@ -12,6 +12,6 @@ class ProductsController < ApplicationController
       iat: Time.now.to_i,
       amount: 4000,
       currency: 'USD'
-    }, ENV['QUAD_TEST_SECRET'])
+    }, ENV['QUAD_SECRET'])
   end
 end

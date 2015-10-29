@@ -48,6 +48,7 @@ body {background-color: #000;}
     p {font-size: 2em; font-weight: bold;}
   }
 }
+.soldOutPara {color: #fff;}
 
 .rotate {
   -webkit-transform: rotate(-25deg);
@@ -372,6 +373,7 @@ footer {
       -ms-transform: rotate(180deg) scale(1.1);
           transform: rotate(180deg) scale(1.1);
 }
+.payment-errors {color: red;}
 
 // MODAL STYLING END
 
@@ -380,19 +382,31 @@ footer {
  */
 // SUCCESS PAGE START
 .successContainer {
+  background: image-url('Success-Background.jpg') no-repeat;
   width: 100%;
-  height: 100%;
+  height: 90vh;
   text-align: center;
+  background-size: cover;
   h2 {
     padding-top: 30vh;
     color: #fff;
   }
   p {
-    width: 80%;
+    width: 75%;
+    max-width: 800px;
     margin: 0 auto;
     text-align: left;
     line-height: 3;
   }
 }
+@media handheld, screen and (max-width: 600px) {
+  .successContainer {
+    h2 {font-size: 1.2em;}
+    p {
+      line-height: 2;
+      font-size: .8em;
+    }
 
+  }
+}
 // SUCCESS PAGE END

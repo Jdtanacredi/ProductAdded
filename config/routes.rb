@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contests/index'
+
   post 'mcsubscribe/subscribe', to: 'mcsubscribe#subscribe'
   root :to =>'mcsubscribe#launch'
   get 'mcsubscribe/launch'

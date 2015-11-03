@@ -1,7 +1,20 @@
-<%= form_for :contest, url: {action: "create"}, html: {class: "contestForm"} do |f| %>
-<%#= form_for :contest do |f| %>
-<%= f.text_field :first_name %>
-<%= f.text_field :last_name %>
-<%= f.text_field :email %>
-<%= f.submit %>
-<% end %>
+<div class="contestPage">
+    <h2>Enter for a Chance to Win Pat McGrath's Sold-Out Gold Eyeshadow</h2>
+
+    <div class="contestFloat contestLeft">
+      <%= image_tag "contest/pat-mcgrath-patrick-demarchelier.jpg", class: "contestImage" %>
+    </div>
+    <div class="contestFloat contestRight">
+      <%= image_tag "product/productImage1.jpg", class: "contestProductImage" %>
+      <%= image_tag "product/productImage2.jpg", class: "contestProductImage" %>
+      <%= image_tag "product/productImage3.jpg", class: "contestProductImage" %>
+      <p>When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue is giving away a few more pots of the rare and glimmering pigment.</p>
+
+      <%= form_for :contest, url: {action: "create"}, html: {class: "contestForm"} do |f| %>
+        <%= f.text_field :first_name %>
+        <%= f.text_field :last_name %>
+        <%= f.text_field :email %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+</div>

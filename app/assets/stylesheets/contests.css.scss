@@ -1,3 +1,13 @@
-// Place all the styles related to the contests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.contestPage {
+  max-width: 960px;
+  margin: 100px auto 0;
+  .contestFloat {
+    float: left;
+    img {width: 100%;}
+    .contestProductImage {width: 150px; margin: 0 15px;}
+  }
+  .contestLeft {width: 40%;}
+  .contestRight {width: 60%;}
+
+  .contestForm input {display: block; margin: 20px auto;}
+}

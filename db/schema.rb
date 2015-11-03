@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(version: 20151030192216) do
 
   create_table "contests", force: true do |t|
     t.string   "email",      limit: 50
-    t.string   "name",       limit: 50
+    t.string   "first_name", limit: 50
+    t.string   "last_name",  limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,4 +1,5 @@
-<%= form_for :contest do |f| %>
+<%= form_for :contest, url: {action: "create"}, html: {class: "contestForm"} do |f| %>
+<%#= form_for :contest do |f| %>
 <%= f.text_field :first_name %>
 <%= f.text_field :last_name %>
 <%= f.text_field :email %>

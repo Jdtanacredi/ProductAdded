@@ -1,6 +1,6 @@
 .contestPage {
   max-width: 960px;
-  margin: 100px auto 0;
+  margin: 100px auto 60px;
   h2 {
     text-align: center;
     font-weight: 100;
@@ -18,12 +18,12 @@
   .contestLeft {width: 40%;}
   .contestRight {
     width: 60%;
-    p {margin: 20px;}
+    p {margin-left: 20px; font-size: .9em; text-align: center;}
   }
   .contestForm {
-    input {display: block; margin: 20px auto; font-family: 'courier';}
+    input {display: block; margin: 30px auto 0; font-family: 'courier';}
     input[type="text"]{
-      width: 250px;
+      width: 300px;
       padding: 5px 10px;
       background: #a4a4a4;
       border: 1px solid #fff;
@@ -31,7 +31,7 @@
     }
     input[type="submit"] {
       text-transform: uppercase;
-      background-color: #aaa;
+      background-color: #ebebeb;
       border: none;
       padding: 15px 40px;
       cursor: pointer;
@@ -41,5 +41,13 @@
       input:-moz-placeholder {color: #000;}
       input::-moz-placeholder {color: #000;}
       input:-ms-input-placeholder {color: #000;}
+  }
+  .payment-errors {
+    font-size: .8em;
+    text-align: center;
+  }
+  .emailAlert {
+    margin: 0;
+    color: red;
   }
 }

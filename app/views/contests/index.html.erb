@@ -1,4 +1,4 @@
-<div class="contestPage">
+<div class="contestPage clearfix">
     <h2>Enter for a Chance to Win Pat McGrath's Sold-Out Gold Eyeshadow</h2>
 
     <div class="contestFloat contestLeft">
@@ -11,12 +11,12 @@
       <p>When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue is giving away a few more pots of the rare and glimmering pigment.</p>
 
       <%= form_for :contest, url: {action: "create"}, remote: true, html: {class: "contestForm"} do |f| %>
-        <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
-        <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
-        <%= f.text_field :email, placeholder: 'EMAIL' %>
+        <%= f.text_field :first_name, placeholder: 'FIRST NAME', class: 'validateThis' %>
+        <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
+        <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
         <%= f.submit "click to win" %>
       <% end %>
-      <span class="payment-errors"></span>
+      <p class="payment-errors"><span></span></p>
     </div>
     <script type="text/javascript">
     $(document).ready(function(){
@@ -30,4 +30,12 @@
 
 });
     </script>
+
 </div>
+<footer>
+  <a class="list-group-item" target="_blank" href="https://instagram.com/patmcgrathreal/"><i class="fa fa-instagram"></i>&nbsp;</a>
+  <a class="list-group-item" target="_blank" href="https://www.facebook.com/PatMcGrathReal"><i class="fa fa-facebook-square"></i>&nbsp;</a>
+  <a class="list-group-item" target="_blank" href="https://twitter.com/patmcgrathreal"><i class="fa fa-twitter"></i>&nbsp;</a>
+  <div class="footerBranding">
+    &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a></div>
+</footer>

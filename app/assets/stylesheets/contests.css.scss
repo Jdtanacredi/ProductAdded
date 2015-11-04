@@ -4,10 +4,31 @@
   .contestFloat {
     float: left;
     img {width: 100%;}
-    .contestProductImage {width: 150px; margin: 0 15px;}
+    .contestProductImage {
+      width: 150px;
+      margin: 0 20px;
+      &:last-of-type {margin-right: 0;}
+    }
+    // .contestProductImage:last-child {margin-right: 0;}
   }
   .contestLeft {width: 40%;}
-  .contestRight {width: 60%;}
-
-  .contestForm input {display: block; margin: 20px auto;}
+  .contestRight {
+    width: 60%;
+    p {margin: 20px;}
+  }
+  .contestForm {
+    input {display: block; margin: 20px auto; font-family: 'courier';}
+    input[type="text"]{
+      width: 250px;
+      padding: 5px 5px;
+      background: #a4a4a4;
+      border: 1px solid #fff;
+    }
+    input[type="submit"] {
+      text-transform: uppercase;
+      background-color: #aaa;
+      border: none;
+      padding: 15px 60px;
+    }
+  }
 }

@@ -11,9 +11,9 @@
       <p>When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue is giving away a few more pots of the rare and glimmering pigment.</p>
 
       <%= form_for :contest, url: {action: "create"}, html: {class: "contestForm"} do |f| %>
-        <%= f.text_field :first_name %>
-        <%= f.text_field :last_name %>
-        <%= f.text_field :email %>
+        <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
+        <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
+        <%= f.text_field :email, placeholder: 'EMAIL' %>
         <%= f.submit "click to win" %>
       <% end %>
     </div>

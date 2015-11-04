@@ -18,7 +18,12 @@
         <%= f.submit "click to win" %>
       <% end %>
       <p class="payment-errors"><span></span></p>
+      <div class="logoContainer">
+          <%= image_tag "contest/VogueLogo.png", class: "vogueLogo" %>
+          <%= image_tag "contest/PatLogo.png", class: "patLogo" %>
+      </div>
     </div>
+
     <script type="text/javascript">
     $(document).ready(function(){
       $(document).bind('ajaxError', 'form#new_contest', function(event, jqxhr, settings, exception){

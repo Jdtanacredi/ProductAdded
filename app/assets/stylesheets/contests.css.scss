@@ -48,6 +48,13 @@
       input {display: inline-block;}
     }
   }
+  .logoContainer {
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+    .vogueLogo {width: 80px;margin-right: 10px;}
+    .patLogo {width: 160px;}
+  }
   .payment-errors {
     font-size: .8em;
     text-align: center;

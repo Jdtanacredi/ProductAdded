@@ -8,7 +8,7 @@
       <%= image_tag "product/productImage1.jpg", class: "contestProductImage" %>
       <%= image_tag "product/productImage2.jpg", class: "contestProductImage" %>
       <%= image_tag "product/productImage3.jpg", class: "contestProductImage" %>
-      <p class="contestCopy">When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue is giving away a few more pots of the rare and glimmering pigment.</p>
+      <p class="contestCopy">When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue are giving away a few more pots of the rare and glimmering pigment.</p>
 
       <%= form_for :contest, url: {action: "create"}, remote: true, html: {class: "contestForm"} do |f| %>
         <%= f.text_field :first_name, placeholder: 'FIRST NAME', class: 'validateThis' %>

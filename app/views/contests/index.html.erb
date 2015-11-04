@@ -10,11 +10,24 @@
       <%= image_tag "product/productImage3.jpg", class: "contestProductImage" %>
       <p>When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue is giving away a few more pots of the rare and glimmering pigment.</p>
 
-      <%= form_for :contest, url: {action: "create"}, html: {class: "contestForm"} do |f| %>
+      <%= form_for :contest, url: {action: "create"}, remote: true, html: {class: "contestForm"} do |f| %>
         <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
         <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
         <%= f.text_field :email, placeholder: 'EMAIL' %>
         <%= f.submit "click to win" %>
       <% end %>
+      <span class="payment-errors"></span>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(document).bind('ajaxError', 'form#new_contest', function(event, jqxhr, settings, exception){
+  // note: jqxhr.responseJSON undefined, parsing responseText instead
+      // $(event.data).render_form_errors( $.parseJSON(jqxhr.responseText) );
+      console.log(jqxhr);
+      $('.payment-errors').html(jqxhr.responseText);
+
+});
+
+});
+    </script>
 </div>

@@ -5,13 +5,13 @@ class ContestsController < ApplicationController
   end
 
   def create
-    binding.pry
+    
     @contest = Contest.new(
       email: params["contest"]["email"],
       first_name: params["contest"]["first_name"],
       last_name: params["contest"]["last_name"]
     )
-    binding.pry
+
     if @contest.save
       redirect_to '/contest-success'
     else

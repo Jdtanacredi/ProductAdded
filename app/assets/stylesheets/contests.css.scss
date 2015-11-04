@@ -64,3 +64,65 @@
     color: red;
   }
 }
+.floatRightMobile {
+  display: none;
+}
+
+@media handheld, screen and (max-width: 960px) {
+  .contestFloat {width: 50%;}
+  .floatRightMobile {display: block;}
+  #desktopProductImage {display: none;}
+  .contestPage {
+    .contestLeft {
+      width: 100%;
+      .contestImage {
+        width: 50%;
+        float: left;
+      }
+      .floatRightMobile {
+        width: 50%;
+        float: left;
+        .contestProductImage {
+          width: 50%;
+          display: block;
+          margin: 0 auto;
+          &:last-of-type {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    .contestRight {
+      float: none;
+      clear: both;
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 20px;
+      .contestCopy {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media handheld, screen and (max-width: 400px) {
+  .contestPage {
+    h2 {font-size: 1em;}
+    .contestForm {
+      input[type="text"] {
+        width: 200px;
+      }
+      .contestCheckbox {
+        width: 200px;
+      }
+    }
+    .logoContainer {
+      width: 200px;
+    }
+    .contestRight {
+      .contestCopy {
+        font-size: .8em;
+      }
+    }
+  }
+}

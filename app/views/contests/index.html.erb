@@ -3,11 +3,16 @@
 
     <div class="contestFloat contestLeft">
       <%= image_tag "contest/Daria.png", class: "contestImage" %>
+      <div class="floatRightMobile">
+        <%= image_tag "product/productImage1.jpg", class: "contestProductImage" %>
+        <%= image_tag "product/productImage2.jpg", class: "contestProductImage" %>
+        <%= image_tag "product/productImage3.jpg", class: "contestProductImage" %>
+      </div>
     </div>
     <div class="contestFloat contestRight">
-      <%= image_tag "product/productImage1.jpg", class: "contestProductImage" %>
-      <%= image_tag "product/productImage2.jpg", class: "contestProductImage" %>
-      <%= image_tag "product/productImage3.jpg", class: "contestProductImage" %>
+      <%= image_tag "product/productImage1.jpg", class: "contestProductImage", id: "desktopProductImage" %>
+      <%= image_tag "product/productImage2.jpg", class: "contestProductImage", id: "desktopProductImage" %>
+      <%= image_tag "product/productImage3.jpg", class: "contestProductImage", id: "desktopProductImage" %>
       <p class="contestCopy">When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue are giving away a few more pots of the rare and glimmering pigment.</p>
 
       <%= form_for :contest, url: {action: "create"}, remote: true, html: {class: "contestForm"} do |f| %>
@@ -15,7 +20,7 @@
         <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
         <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
         <p class="contestCheckbox"><%= check_box_tag :policy %> <%= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
-        <%= f.submit "click to win" %>
+        <%= f.submit "click to win",:onclick => "checkTerms();" %>
       <% end %>
       <p class="payment-errors"><span></span></p>
       <div class="logoContainer">
@@ -34,6 +39,11 @@
 
       });
 
+      $(".contestForm").submit(function (e) {
+        if(!$("input[name='policy']").is(":checked")) {
+          e.preventDefault();
+        }
+      });
 
       $('body').on('keydown', 'input, select, textarea', function(e) {
         var self = $(this)

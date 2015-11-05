@@ -21,6 +21,7 @@
     .contestCopy {margin-left: 20px; font-size: .9em; text-align: center;}
   }
   #new_contest {
+    margin-bottom: 5px;
     input {display: block; margin: 30px auto 0; font-family: 'courier';}
     input[type="text"]{
       width: 300px;
@@ -53,7 +54,7 @@
   }
   .logoContainer {
     width: 350px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     text-align: center;
     .vogueLogo {width: 80px;margin-right: 10px;}
     .patLogo {width: 160px;}

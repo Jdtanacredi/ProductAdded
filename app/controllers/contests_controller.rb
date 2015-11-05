@@ -5,19 +5,16 @@ class ContestsController < ApplicationController
   end
 
   def create
-    
-    @contest = Contest.new(
-      email: params["contest"]["email"],
-      first_name: params["contest"]["first_name"],
-      last_name: params["contest"]["last_name"]
-    )
+    @contest = Contest.new(contest_params)
+    status = @contest.save ? :ok : 422
+    render json: @contest.to_json(methods: [:errors]), layout: false, status: status
 
-    if @contest.save
-      redirect_to '/contest-success'
-    else
-      render json: 'An error has occurred. Please go back and try again.'
-    end
+  end
 
+private
+
+  def contest_params
+    params.require(:contest).permit(:email, :first_name, :last_name)
   end
 
 end

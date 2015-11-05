@@ -20,7 +20,7 @@
     width: 60%;
     .contestCopy {margin-left: 20px; font-size: .9em; text-align: center;}
   }
-  .contestForm {
+  #new_contest {
     input {display: block; margin: 30px auto 0; font-family: 'courier';}
     input[type="text"]{
       width: 300px;
@@ -47,6 +47,9 @@
       font-size: .7em;
       input {display: inline-block;}
     }
+    input.field-with-error {
+      border: 1px solid red;
+    }
   }
   .logoContainer {
     width: 350px;
@@ -66,6 +69,12 @@
 }
 .floatRightMobile {
   display: none;
+}
+.success-message {
+  width: 300px;
+  margin: 50px auto;
+  line-height: 1.5;
+  color: #a9a9a9;
 }
 
 @media handheld, screen and (max-width: 960px) {
@@ -108,7 +117,7 @@
 @media handheld, screen and (max-width: 400px) {
   .contestPage {
     h2 {font-size: 1em;}
-    .contestForm {
+    #new_contest {
       input[type="text"] {
         width: 200px;
       }

@@ -2,7 +2,7 @@
     <h2>Enter for a Chance to Win Pat McGrath's Sold-Out Gold Eyeshadow</h2>
 
     <div class="contestFloat contestLeft">
-      <%= image_tag "contest/Daria.png", class: "contestImage" %>
+      <%= image_tag "contest/Daria.jpg", class: "contestImage" %>
       <div class="floatRightMobile">
         <%= image_tag "product/productImage1.jpg", class: "contestProductImage" %>
         <%= image_tag "product/productImage2.jpg", class: "contestProductImage" %>
@@ -13,37 +13,28 @@
       <%= image_tag "product/productImage1.jpg", class: "contestProductImage", id: "desktopProductImage" %>
       <%= image_tag "product/productImage2.jpg", class: "contestProductImage", id: "desktopProductImage" %>
       <%= image_tag "product/productImage3.jpg", class: "contestProductImage", id: "desktopProductImage" %>
-      <p class="contestCopy">When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue are giving away a few more pots of the rare and glimmering pigment.</p>
+      <div class="success-hide">
+        <p class="contestCopy">When it debuted with a limited release of 1000 pieces last week, Gold 001 sold out in minutes. Now, Pat McGrath and Vogue are giving away a few more pots of the rare and glimmering pigment.</p>
 
-      <%= form_for :contest, url: {action: "create"}, remote: true, html: {class: "contestForm"} do |f| %>
-        <%= f.text_field :first_name, placeholder: 'FIRST NAME', class: 'validateThis' %>
-        <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
-        <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
-        <p class="contestCheckbox"><%= check_box_tag :policy %> <%= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
-        <%= f.submit "click to win",:onclick => "checkTerms();" %>
-      <% end %>
-      <p class="payment-errors"><span></span></p>
-      <div class="logoContainer">
-          <%= image_tag "contest/VogueLogo.png", class: "vogueLogo" %>
-          <%= image_tag "contest/PatLogo.png", class: "patLogo" %>
+        <%= form_for Contest.new do |f| %>
+          <%= f.text_field :first_name, placeholder: 'FIRST NAME', class: 'validateThis' %>
+          <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
+          <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
+          <div id="form_errors"></div>
+          <p class="contestCheckbox"><%= check_box_tag :policy %> <%= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
+          <%= f.submit "click to win" %>
+        <% end %>
+        <p class="payment-errors contest-error"><span></span></p>
+        <div class="logoContainer">
+            <%= image_tag "contest/VogueLogo.png", class: "vogueLogo" %>
+            <%= image_tag "contest/PatLogo.png", class: "patLogo" %>
+        </div>
       </div>
     </div>
 
     <script type="text/javascript">
     $(document).ready(function(){
-      $(document).bind('ajaxError', 'form#new_contest', function(event, jqxhr, settings, exception){
-  // note: jqxhr.responseJSON undefined, parsing responseText instead
-      // $(event.data).render_form_errors( $.parseJSON(jqxhr.responseText) );
-      console.log(jqxhr);
-      $('.payment-errors').html(jqxhr.responseText);
 
-      });
-
-      $(".contestForm").submit(function (e) {
-        if(!$("input[name='policy']").is(":checked")) {
-          e.preventDefault();
-        }
-      });
 
       $('body').on('keydown', 'input, select, textarea', function(e) {
         var self = $(this)

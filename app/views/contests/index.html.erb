@@ -21,10 +21,10 @@
           <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
           <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
           <div id="form_errors"></div>
-          <!-- <a href="" data-modal="#modal2" class="modal__trigger">T&C</a> -->
           <p class="contestCheckbox"><%= check_box_tag :policy %> <span>I accept and agree to the <a class="modal__trigger" data-modal="#modal2" href="#">T&C</a>. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs.</span> <%#= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
           <%= f.submit "click to win", class: 'contest-submit' %>
         <% end %>
+        <p class="checkbox-message">Please check the T&C box to enter</p>
         <p class="payment-errors contest-error"><span></span></p>
         <p class="payment-errors contest-error-name"><span></span></p>
         <div class="logoContainer">

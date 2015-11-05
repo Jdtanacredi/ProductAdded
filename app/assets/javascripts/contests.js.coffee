@@ -4,8 +4,10 @@ $(document).ready ->
     console.log this.checked
     if this.checked == true
       $('.contest-submit').removeAttr 'disabled', 'disabled'
+      $('.checkbox-message').css 'display', 'none'
     else
       $('.contest-submit').attr 'disabled', 'disabled'
+      $('.checkbox-message').css 'display', 'block'
     return
 
 

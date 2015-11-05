@@ -23,7 +23,8 @@
   #new_contest {
     margin-bottom: 5px;
     input {display: block; margin: 30px auto 0; font-family: 'courier';}
-    input[type="text"]{
+    input[type="text"],
+    input[type="email"]{
       width: 300px;
       padding: 5px 10px;
       background: #a4a4a4;
@@ -127,11 +128,12 @@
   .contestPage {
     h2 {font-size: 1em;}
     #new_contest {
-      input[type="text"] {
+      input[type="text"],
+      input[type="email"] {
         width: 200px;
       }
       .contestCheckbox {
-        width: 200px;
+        width: 225px;
       }
     }
     .logoContainer {

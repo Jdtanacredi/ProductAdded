@@ -21,23 +21,18 @@
           <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'validateThis' %>
           <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
           <div id="form_errors"></div>
-          <p class="contestCheckbox"><%= check_box_tag :policy %> <%= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
+          <!-- <a href="" data-modal="#modal2" class="modal__trigger">T&C</a> -->
+          <p class="contestCheckbox"><%= check_box_tag :policy %> <span>I accept and agree to the <a class="modal__trigger" data-modal="#modal2" href="#">T&C</a>. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs.</span> <%#= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
           <%= f.submit "click to win", class: 'contest-submit' %>
         <% end %>
         <p class="payment-errors contest-error"><span></span></p>
+        <p class="payment-errors contest-error-name"><span></span></p>
         <div class="logoContainer">
             <%= image_tag "contest/VogueLogo.png", class: "vogueLogo" %>
             <%= image_tag "contest/PatLogo.png", class: "patLogo" %>
         </div>
       </div>
     </div>
-
-    <script type="text/javascript">
-    $(document).ready(function(){
-
-
-    });
-    </script>
 
 </div>
 <footer>
@@ -47,3 +42,375 @@
   <div class="footerBranding">
     &#35;Gold001 <span>|</span> <a href="mailto:contact@patmcgrath.com" target="_top">Contact</a></div>
 </footer>
+
+<div id="modal2" class="modal modal--align-top modal__bg" role="dialog" aria-hidden="true">
+	<div class="modal__dialog">
+		<div class="modal__content">
+      <p>Vogue/Pat	McGrath	Gold	Eye	shadow Sweepstakes	(the	"Promotion")</p>
+<p>OFFICIAL	SWEEPSTAKES	RULES</p>
+<p>NO	PURCHASE	OR	PAYMENT	OF	ANY	KIND	IS	NECESSARY	TO	ENTER	OR	WIN
+THIS	PROMOTION.</p>
+<p>A	purchase	will	not	improve	chances	of	winning.</p>
+<p>CONSUMER	DISCLOSURE</br>
+You	have	not yet	won.</p>
+
+<p>OPEN	ONLY	TO	LEGAL	RESIDENTS	OF	THE	50	UNITED	STATES	AND	DISTRICT	OF
+COLUMBIA	WHO	ARE	AT	LEAST	18	YEARS	OLD	AS	OF	THE	DATE	OF	ENTRY</br>
+By	entering	this	Promotion,	entrants	accept	and	agree	to	be	bound	by	these	Official
+Rules.	Any	violation	of	these rules	may,	at	Sponsor(s)’discretion,	result	in
+disqualification.	All	decisions	of	the	judges	regarding	this	Promotion	are	final	and
+binding	in	all	respects.</p>
+
+<p>1.	PROMOTION	PERIOD.	Promotion	begins	9:00	AM	ET	on	Thursday,	November	5th
+and	ends	at	11:59	PM	ET	on	Thursday, November	19th. when	all	entries	must	be
+received (“Promotion	Period”).</p>
+
+<p>2.	ELIGIBILITY.	This	Promotion	is	only	open	to	legal	residents	of	the	50	United
+States	and	District	of	Columbia	who	are	at	least	18	years	old	as	of	the	date	of	entry,
+except	officers,	directors,	members,	and	employees	of	the	Sponsor(s),	the	judging
+organization	(if	applicable),	or	any	other	party	associated	with	the	development	or
+administration	of	this	Promotion,	and	the	immediate	family	(i.e.,	parents,	children,
+siblings,	spouse),	and	persons	residing	in	the	same	household,	as	such	individuals.
+This	Promotion	is	void	outside	the	50	United	States	and	the	District	of	Columbia,
+and	where	prohibited.</p>
+
+<p>3.	HOW	TO	ENTER.	Visit	www.patmcgrath.com/win during	the	Promotion	Period
+and
+follow	the	instructions	to	complete	and	submit	the	entry	form.	You	do	not	have	to
+purchase	any	product	or	subscribe	to	the	magazine	to	enter.	All	entries	become	the
+property	of	the	Sponsor(s) and	will	not	be	acknowledged	or	returned.</p>
+<p>Limit:	One	entry	per person	and	one	entry	per	e-mail	address	during	the	Promotion
+Period.	All	entrant	information,	including	e-mail	addresses,	is	subject	to	the
+respective	Privacy	Policy	of	the	applicable	Sponsor(s)s</p>
+
+<p>4.	WINNER	SELECTION	AND	NOTIFICATION.	Winner	selection	will	be
+conducted	by	random	drawing	from	all	eligible	entries	on	or	about November	19,
+2015	(the	“Drawing	Date”). Any	potential	winner	will	be	notified	by	email.
+If	a	potential	winner:	(i)	cannot	be	contacted;	(ii)	does	not	respond
+within	five	(5)	days	from	the	date	the	Sponsor(s) first	tries	to	notify	him/her;	(iii)
+fails	to	return	the	Affidavit	and	Release	as	specified	in	Rule	9;	(iv)	refuses	the	prize;
+and/or	(v)	the	prize	or	prize	notification	is	returned	as	undeliverable,	such	potential
+winner		688697	forfeits	all	rights	to	win	the	Promotion	or	receive	the	prize,	and	an
+alternate	potential	winner	may	be	selected.	Upon	contacting	a	potential	winner	and
+determining	that	he/she	has	met	all	eligibility	requirements	of	the	Promotion,
+including	without	limitation	the	execution	of	required	waivers,	publicity	and
+liability	releases	and	disclaimers,	and,	at	Sponsor(s)’discretion,	successful
+completion	of	a	background	check,	such	individual	will	be	declared	the	“winner”	of
+the	Promotion.</p>
+<p>5.	PRIZE	DESCRIPTION.	There	will	be	one	(5)	winners.	The	prize	is	one	(1)	Pat
+McGrath	Gold	001	pigment,	metal	spatula,	second	life	container	and	Mehron	mixing
+liquid.		The	total	approximate	retail	value	of	the	prize(s)	is $40.00.</p>
+<p>6.	TAXES.	All	federal,	state	and/or	local	income	and	other	taxes,	if	any,	are	the
+winner’s	sole	responsibility.</p>
+<p>7.	ODDS	OF	WINNING.	The	odds	of	winning	this	Promotion	depend	on	the
+number	of	eligible	entries	received.</p>
+<p>8.	NO	PRIZE	TRANSFER	OR	SUBSTITUTION.	No	prize	or	any	portion	thereof	is
+transferable	or	redeemable	for	cash.	No	substitutions	for	prize	except	by
+Sponsor(s),	in which	case	a	prize	of	equal	or	greater	value	will	be	substituted.</p>
+<p>9.	CONSENT	AND	RELEASE.	By	entering	the	Promotion,	each	entrant	releases
+and	discharges	the	Sponsor(s)s,	judging	organization	(if	applicable),	and	any	other
+party	associated	with	the	development	or	administration	of	this	Promotion,	their
+parent,	subsidiary,	and	affiliated	entities,	and	each	of	their	respective	officers,
+directors,	members,	shareholders,	employees,	independent	contractors,	agents,
+representatives,	successors	and	assigns	(collectively,	“Sponsor(s) Entities”),	from
+any and	all	liability	whatsoever	in	connection	with	this	Promotion,	including
+without limitation	legal	claims,	costs,	injuries,	losses	or	damages,	demands	or
+actions	of	any	688697	kind	(including	without	limitation	personal	injuries,	death,
+damage	to,	loss	or	destruction	or	property,	rights	of	publicity	or	privacy,
+defamation,	or	portrayal	in	a	false	light)	(collectively,	“Claims”).	Except	where
+prohibited:	(i)	entry	into	the Promotion	constitutes	the	consent	of	the	entrant,
+without	further	compensation,	touse	his/her	name,	likeness,	biographical	data,	and
+contact	information	for	editorial,advertising,	marketing,	publicity,	and
+administrative	purposes	by	the	Sponsor(s)
+and/or	others	authorized	by	the	Sponsor(s);	(ii)	acceptance	of	a	prize	constitutes	a
+release	by	any	winner	of	the	Sponsor(s) Entities	of	any	and	all	Claims	in	connection
+with	the	administration	of	this	Promotion	and	the	use,	misuse,	or	possession	of	any
+prize;	(iii)	any	potential	winner	may	be	required	to	sign	an	affidavit	of	eligibility
+(including	social	security	number)	and	a	liability/publicity	release;	and	(iv)	if	prize
+involves	travel	or	activities,	any	potential	winner	and	travel	companion	(if
+applicable)may	be	required to	execute	releases	of	the	Sponsor(s) from	any	and	all
+liability	with respect	to	participation	in	such	travel/activities	and/or	use	of	the
+prize.	Fully	executed	affidavits	and	releases	must	be	received	by	Sponsor(s) within
+five	(5)	days from	the	date	that Sponsor(s) first	tries	to	notify	the	potential	winner.
+Sponsor(s) mayconduct	a	background	check	to	confirm	any	potential	winner’s
+eligibility	and compliance	with	these	rules.	By	entering,	you	agree	to	cooperate
+reasonably	with any	such	background	check.	If	the	prize	includes	participation	in
+any	public event(s)	or	publicity,	or	if	Sponsor(s) Entities	intend	to	publicize	the
+winner	in	any	way,	and	if	a	background	check	reveals	that	a	potential	winner	has
+engaged	in	conduct	that	could	damage	the	reputation	or	business	of	any	Sponsor(s)
+Entity,	as	determined	by	Sponsor(s)s	in	its	discretion,	the	potential	winner	may	be
+disqualified	and	the	prize	may	be	awarded	to	an	alternate	winner.	If	winner	is
+deemed	to	be	a	minor	under	the	jurisdiction	of	his/her	residence,	the	prize	will	be
+awarded	in	the	name	of	his/her	parent	or	legal	guardian	who	must	execute	the
+necessary	affidavit	and	release	and,	if	applicable,	must	accompany	winner	on	the
+trip	(no	additional	travel	expenses	will	be	awarded	should	a	parent	or	legal
+guardian	be	required	to	accompany	the	winner	on	the	trip).</p>
+
+<p>10.	DISCLAIMERS.	(i)	Sponsor(s)s	not	responsible	for	entries	that	are	lost,	late,
+misdirected,	incorrect,	garbled,	or	incompletely	received,	for	any	reason,	including
+by	reason	of	hardware,	software,	browser,	or	network	failure,	malfunction,
+congestion,	or	incompatibility	at	Sponsor(s)s’	servers	or	elsewhere.	In	the	event	of	a
+dispute,	entries	will	be	deemed	submitted	by	the	authorized	account	holder	of	the	email
+address	submitted	at	the	time	of	entry.	“Authorized	account	holder”	is	defined
+as	the	natural	person	who	is	assigned	to	an	e-mail	address	by	an	Internet	Access
+Provider,	online	service	provider,	or	other	organization	(e.g.,	business,	educational
+institute)	that	is	responsible	for	assigning e-mail	addresses	for	the	domain
+associated	with	the	submitted	e-mail	address.	(ii)	Sponsor(s),	in	its	sole	discretion,
+reserves	the	right	to	disqualify	any	person	tampering	with	the	entry	process	or	the
+operation	of	the	web	site	or	otherwise	attempting	to undermine	the	legitimate
+operation	of	the	Promotion.	Use	of	bots	or	other	automated	process	to	enter	is
+prohibited	and	may	result	in	disqualification	at	the	sole	discretion	of	Sponsor(s).
+(iii)
+Sponsor(s) further	reserves	the	right	to	cancel,	terminate	or	modify	the	Promotion	if
+it
+is	not	capable	of	completion	as	planned,	including	by	reason	of	infection	by
+computer	virus,	bugs,	tampering,	unauthorized	intervention,	force	majeure	or
+technical	failures	of	any	sort.	(iv)	Sponsor(s) Entities	are	not	responsible	for	errors
+in
+the	administration	or	fulfillment	of	this	Promotion,	including	without	limitation
+688697	mechanical,	human,	printing,	distribution	or	production	errors,	and	may
+cancel,	terminate	or	modify	this	Promotion	based	upon	such	error	at	its	sole
+discretion	without	liability.	In	no	event	will	Sponsor(s) be	responsible	for	awarding
+more	than	the	number	of	prizes	specified	in	these	rules.	(v)	In	the	event	this
+Promotion	is	cancelled	or	terminated,	pursuant	to	subparagraph	(iii)	or	(iv),
+Sponsor(s),	in	its	sole	discretion,	may	elect	to	hold	a	random	drawing	from	among
+all	eligible	entries	received	up	to	the	date	of	discontinuance	for	any	or	all	of	the
+prizes	offered	herein.	(vi)	SPONSOR(S) ENTITIES	MAKE	NO	WARRANTIES,
+REPRESENTATIONS	OR	GUARANTEES,EXPRESS	OR	IMPLIED,	IN	FACT	OR	IN	LAW,
+AS	REGARDS	THIS	PROMOTION	OR	THE	MERCHANTABILITY,	QUALITY	OR	FITNESS
+FOR	A	PARTICULAR	PURPOSE	REGARDING	ANY	PRIZE	OR	ANY	COMPONENT	OF
+ANY	PRIZE.	(vii)	CAUTION:	ANYATTEMPT BY	AN	ENTRANT	TO	DELIBERATELY
+DAMAGE	THE	WEBSITE	OR	UNDERMINE	THE	LEGITIMATE	OPERATION	OF	THIS
+PROMOTION	MAY	BE	A	VIOLATION	OF	CRIMINAL	AND/OR	CIVIL	LAWS,	AND
+SHOULD	SUCH	AN	ATTEMPT	BE	MADE,	SPONSOR(S) RESERVES	THE	RIGHT	TO
+SEEK	REMEDIES	AND	DAMAGES	(INCLUDING	WITHOUT	LIMITATION	ATTORNEYS’
+FEES)	FROM	ANY	SUCH	ENTRANT	TO	THE	FULLEST	EXTENT	OF	THE	LAW,
+INCLUDING	CRIMINAL	PROSECUTION.	(viii)	The	value(s)	of	the	prize(s)	set	forth
+above	represent	Sponsor(s)’good	faith	determination	of	the	approximate	retail
+value(s)	thereof;	the	actual	fair	market	value(s)	as	ultimately	determined	by
+Sponsor(s) are	final	and	binding	and	cannot	be	challenged	or	appealed.	In	the	event
+the	stated	approximate	retail	value(s)	of	a	prize	is	more	than	the	actual	fair	market
+value	of	that	prize,	the	difference	will	not	be	awarded	in	cash	or	otherwise.	No
+substitution	or	compensation	will	be	given	for	any	portion	of	the	prize	that	is	not
+used.</p>
+<p>11.	APPLICABLE	LAWS	AND	JURISDICTION.	This	Promotion	is	subject	to	all
+applicable	federal,	state,	and	local	laws	and	regulations.	Issues	concerning	the
+construction,	validity,	interpretation	and	enforceability	of	these	Official	Rules	shall
+be	governed	by	the	laws	of	the	State	of	New	York,	without	regard	to	any	principles
+of	conflict	of	laws.	All	disputes	arising	out	of	or	connected	with	this	Promotion	will
+be	resolved	individually,	and	without	resort	to	class	action,	exclusively	by	a	state	or
+federal	court	located	in	New	York,	New	York.	Should	there	be	a	conflict	between	the
+laws	of	the	State	of	New York	and	any	other	laws,	the	conflict	will	be	resolved	in
+favor	of	the	laws	of	the	State	of	New	York.	To	the	extent	permitted	by	applicable	law,
+all	judgments	or	awards	shall	be	limited	to	actual	out-of-pocket	damages	(excluding
+attorneys’	fees)	associated	with	participation	in	this	Promotion	and	shall	not	include
+any	indirect,	punitive,	incidental	and/or	consequential	damages.</p>
+<p>12.	WINNER	LIST.	For	the	name(s)	of	the	winner,	send	a	self-addressed	stamped
+envelope,	within	six	(6)	months	of	the	Drawing	Date,	to:	Winner	List,	“Vogue/Pat
+McGrath	Gold	Eye	shadow Sweepstakes,”	Vogue,	One	world	Trade	Center,	NY,	NY
+10007.</p>
+<p>13.	SPONSOR(S)SHIP.	This	Promotion	is	sponsored	by	Pat	McGrath	Labs	126	Fifth
+Avenue	New	York	NY	10011	and	Vogue	Magazine	of	Conde	Nast,	One	World	Trade
+Center,	NY,	NY	10007	(the	“Sponsor(s)s”).</p>
+      <a href="" class="modal__close demo-close">
+        <svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+var Modal = (function() {
+
+var trigger = $qsa('.modal__trigger'); // what you click to activate the modal
+var modals = $qsa('.modal'); // the entire modal (takes up entire window)
+var modalsbg = $qsa('.modal__bg'); // the entire modal (takes up entire window)
+var content = $qsa('.modal__content'); // the inner content of the modal
+var closers = $qsa('.modal__close'); // an element used to close the modal
+var w = window;
+var isOpen = false;
+var contentDelay = 400; // duration after you click the button and wait for the content to show
+var len = trigger.length;
+
+// make it easier for yourself by not having to type as much to select an element
+function $qsa(el) {
+  return document.querySelectorAll(el);
+}
+
+var getId = function(event) {
+
+  event.preventDefault();
+  var self = this;
+  // get the value of the data-modal attribute from the button
+  var modalId = self.dataset.modal;
+  var len = modalId.length;
+  // remove the '#' from the string
+  var modalIdTrimmed = modalId.substring(1, len);
+  // select the modal we want to activate
+  var modal = document.getElementById(modalIdTrimmed);
+  // execute function that creates the temporary expanding div
+  makeDiv(self, modal);
+};
+
+var makeDiv = function(self, modal) {
+
+  var fakediv = document.getElementById('modal__temp');
+
+  /**
+   * if there isn't a 'fakediv', create one and append it to the button that was
+   * clicked. after that execute the function 'moveTrig' which handles the animations.
+   */
+
+  if (fakediv === null) {
+    var div = document.createElement('div');
+    div.id = 'modal__temp';
+    self.appendChild(div);
+    moveTrig(self, modal, div);
+  }
+};
+
+var moveTrig = function(trig, modal, div) {
+  var trigProps = trig.getBoundingClientRect();
+  var m = modal;
+  var mProps = m.querySelector('.modal__content').getBoundingClientRect();
+  var transX, transY, scaleX, scaleY;
+  var xc = w.innerWidth / 2;
+  var yc = w.innerHeight / 2;
+
+  // this class increases z-index value so the button goes overtop the other buttons
+  trig.classList.add('modal__trigger--active');
+
+  // these values are used for scale the temporary div to the same size as the modal
+  scaleX = mProps.width / trigProps.width;
+  scaleY = mProps.height / trigProps.height;
+
+  scaleX = scaleX.toFixed(3); // round to 3 decimal places
+  scaleY = scaleY.toFixed(3);
+
+
+  // these values are used to move the button to the center of the window
+  transX = Math.round(xc - trigProps.left - trigProps.width / 2);
+  transY = Math.round(yc - trigProps.top - trigProps.height / 2);
+
+  // if the modal is aligned to the top then move the button to the center-y of the modal instead of the window
+  if (m.classList.contains('modal--align-top')) {
+    transY = Math.round(mProps.height / 2 + mProps.top - trigProps.top - trigProps.height / 2);
+  }
+
+
+  // translate button to center of screen
+  trig.style.transform = 'translate(' + transX + 'px, ' + transY + 'px)';
+  trig.style.webkitTransform = 'translate(' + transX + 'px, ' + transY + 'px)';
+  // expand temporary div to the same size as the modal
+  div.style.transform = 'scale(' + scaleX + ',' + scaleY + ')';
+  div.style.webkitTransform = 'scale(' + scaleX + ',' + scaleY + ')';
+
+
+  window.setTimeout(function() {
+    window.requestAnimationFrame(function() {
+      open(m, div);
+    });
+  }, contentDelay);
+
+};
+
+var open = function(m, div) {
+
+  if (!isOpen) {
+    // select the content inside the modal
+    var content = m.querySelector('.modal__content');
+    // reveal the modal
+    m.classList.add('modal--active');
+    // reveal the modal content
+    content.classList.add('modal__content--active');
+
+    /**
+     * when the modal content is finished transitioning, fadeout the temporary
+     * expanding div so when the window resizes it isn't visible ( it doesn't
+     * move with the window).
+     */
+
+    content.addEventListener('transitionend', hideDiv, false);
+
+    isOpen = true;
+  }
+
+  function hideDiv() {
+    // fadeout div so that it can't be seen when the window is resized
+    div.style.opacity = '0';
+    content.removeEventListener('transitionend', hideDiv, false);
+  }
+};
+
+var close = function(event) {
+
+  event.preventDefault();
+  event.stopImmediatePropagation();
+
+  var target = event.target;
+  var div = document.getElementById('modal__temp');
+
+  /**
+   * make sure the modal__bg or modal__close was clicked, we don't want to be able to click
+   * inside the modal and have it close.
+   */
+
+  if (isOpen && target.classList.contains('modal__bg') || target.classList.contains('modal__close')) {
+
+    // make the hidden div visible again and remove the transforms so it scales back to its original size
+    div.style.opacity = '1';
+    div.removeAttribute('style');
+
+    /**
+    * iterate through the modals and modal contents and triggers to remove their active classes.
+    * remove the inline css from the trigger to move it back into its original position.
+    */
+
+    for (var i = 0; i < len; i++) {
+      modals[i].classList.remove('modal--active');
+      content[i].classList.remove('modal__content--active');
+      trigger[i].style.transform = 'none';
+      trigger[i].style.webkitTransform = 'none';
+      trigger[i].classList.remove('modal__trigger--active');
+    }
+
+    // when the temporary div is opacity:1 again, we want to remove it from the dom
+    div.addEventListener('transitionend', removeDiv, false);
+
+    isOpen = false;
+
+  }
+
+  function removeDiv() {
+    setTimeout(function() {
+      window.requestAnimationFrame(function() {
+        // remove the temp div from the dom with a slight delay so the animation looks good
+        div.remove();
+      });
+    }, contentDelay - 50);
+  }
+
+};
+
+var bindActions = function() {
+  for (var i = 0; i < len; i++) {
+    trigger[i].addEventListener('click', getId, false);
+    closers[i].addEventListener('click', close, false);
+    modalsbg[i].addEventListener('click', close, false);
+  }
+};
+
+var init = function() {
+  bindActions();
+};
+
+return {
+  init: init
+};
+
+}());
+
+Modal.init();
+</script>

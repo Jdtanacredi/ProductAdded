@@ -61,6 +61,7 @@
   .payment-errors {
     font-size: .8em;
     text-align: center;
+    margin: 0;
   }
   .emailAlert {
     margin: 0;
@@ -134,4 +135,12 @@
       }
     }
   }
+}
+
+// Modal Styling
+.contestCheckbox .modal__trigger {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: underline;
 }

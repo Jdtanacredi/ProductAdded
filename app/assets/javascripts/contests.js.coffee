@@ -10,7 +10,6 @@ $(document).ready ->
 
 
   $("form#new_contest").on "submit", (e) ->
-    console.log 'meow'
     e.preventDefault()
     $.post "/contests", $(e.target).serialize()
       .done (data) ->
@@ -20,7 +19,13 @@ $(document).ready ->
 
       .fail (data) ->
         $.each $.parseJSON(data['responseText'])['errors'], (key, message) ->
+          console.log key
           el = $("#contest_#{key}")
           el.addClass "field-with-error"
           if key == 'email'
             $(".contest-error").html 'email already exists'
+            $(".contest-error-name").html ''
+          if key == 'first_name'
+            $(".contest-error-name").html 'Name is required'
+          if key == 'last_name'
+            $(".contest-error-name").html 'Name is required'

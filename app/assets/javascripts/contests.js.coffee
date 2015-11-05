@@ -1,6 +1,16 @@
 $(document).ready ->
-  console.debug "wired up"
+  $('.contest-submit').attr 'disabled', 'disabled'
+  $('#policy').change ->
+    console.log this.checked
+    if this.checked == true
+      $('.contest-submit').removeAttr 'disabled', 'disabled'
+    else
+      $('.contest-submit').attr 'disabled', 'disabled'
+    return
+
+
   $("form#new_contest").on "submit", (e) ->
+    console.log 'meow'
     e.preventDefault()
     $.post "/contests", $(e.target).serialize()
       .done (data) ->

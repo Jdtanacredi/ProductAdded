@@ -22,7 +22,7 @@
           <%= f.text_field :email, placeholder: 'EMAIL', class: 'validateThis' %>
           <div id="form_errors"></div>
           <p class="contestCheckbox"><%= check_box_tag :policy %> <%= label_tag :policy, "I accept and agree to the T&C. By entering this sweepstakes I agree to receive newsletters from Vogue & Pat McGrath Labs." %></p>
-          <%= f.submit "click to win" %>
+          <%= f.submit "click to win", class: 'contest-submit' %>
         <% end %>
         <p class="payment-errors contest-error"><span></span></p>
         <div class="logoContainer">
@@ -35,24 +35,6 @@
     <script type="text/javascript">
     $(document).ready(function(){
 
-
-      $('body').on('keydown', 'input, select, textarea', function(e) {
-        var self = $(this)
-          , form = self.parents('form:eq(0)')
-          , focusable
-          , next
-          ;
-        if (e.keyCode == 13) {
-            focusable = form.find('input,a,select,button,textarea').filter(':visible');
-            next = focusable.eq(focusable.index(this)+1);
-            if (next.length) {
-                next.focus();
-            } else {
-                form.submit();
-            }
-            return false;
-        }
-      });
 
     });
     </script>
